@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns1="http://enterprise.netbeans.org/bpel/ServiciosVenta/serviciosVenta" xmlns:ns2="http://pasarelapago.webservice.adictosaltrabajo.com/" xmlns:ns3="http://almacen.webservice.adictosaltrabajo.com/" xmlns:ns4="AplicacionTuLibroOnline" xmlns:ns5="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" xmlns:ns6="http://mensajeria.webservice.adictosaltrabajo.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/jbi ./jbi.xsd">
+    <service-assembly>
+        <identification>
+            <name>AplicacionTuLibroOnline</name>
+            <description>Represents the Service Assembly of AplicacionTuLibroOnline</description>
+        </identification>
+        <service-unit>
+            <identification>
+                <name>AplicacionTuLibroOnline-ServiciosVenta</name>
+                <description>Represents this Service Unit</description>
+            </identification>
+            <target>
+                <artifacts-zip>ServiciosVenta.jar</artifacts-zip>
+                <component-name>sun-bpel-engine</component-name>
+            </target>
+        </service-unit>
+        <service-unit>
+            <identification>
+                <name>AplicacionTuLibroOnline-sun-http-binding</name>
+                <description>Represents this Service Unit</description>
+            </identification>
+            <target>
+                <artifacts-zip>sun-http-binding.jar</artifacts-zip>
+                <component-name>sun-http-binding</component-name>
+            </target>
+        </service-unit>
+        <connections>
+            <connection>
+                <consumer endpoint-name="PasarelaPagoRole_partnerRole" service-name="ns1:ServicioPago"/>
+                <provider endpoint-name="PasarelaPagoPort" service-name="ns2:PasarelaPagoService"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="AlmacenRole_partnerRole" service-name="ns1:ServicioAlmacen"/>
+                <provider endpoint-name="AlmacenPort" service-name="ns3:AlmacenService"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="casaPort1" service-name="ns4:AplicacionTuLibroOnlineService1"/>
+                <provider endpoint-name="VentaLibrosWSDLPortTypeRole_myRole" service-name="ns1:VentaLibros"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="VentaLibrosWSDLPort" service-name="ns5:VentaLibrosWSDLService"/>
+                <provider endpoint-name="VentaLibrosWSDLPortTypeRole_myRole" service-name="ns1:VentaLibros"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="EnvioPaquetesRole_partnerRole" service-name="ns1:ServicioMensajeria"/>
+                <provider endpoint-name="EnvioPaquetesPort" service-name="ns6:EnvioPaquetesService"/>
+            </connection>
+        </connections>
+        <route-types xmlns="http://www.open-esb.net/xml/ns/jbi">
+            <source endpoint-name="PasarelaPagoRole_partnerRole" mode="local" routing-rule="default" service-name="ns1:ServicioPago">direct</source>
+            <source endpoint-name="AlmacenRole_partnerRole" mode="local" routing-rule="default" service-name="ns1:ServicioAlmacen">direct</source>
+            <source endpoint-name="casaPort1" mode="local" routing-rule="default" service-name="ns4:AplicacionTuLibroOnlineService1">direct</source>
+            <source endpoint-name="VentaLibrosWSDLPort" mode="local" routing-rule="default" service-name="ns5:VentaLibrosWSDLService">direct</source>
+            <source endpoint-name="EnvioPaquetesRole_partnerRole" mode="local" routing-rule="default" service-name="ns1:ServicioMensajeria">direct</source>
+        </route-types>
+        <interface-mapping xmlns="http://www.open-esb.net/xml/ns/jbi">
+            <implementation>
+                <by-provider endpoint-name="VentaLibrosWSDLPortTypeRole_myRole" service-name="ns1:VentaLibros"/>
+                <interface name="ns5:VentaLibrosWSDLPortType"/>
+            </implementation>
+            <implementation>
+                <by-provider endpoint-name="PasarelaPagoPort" service-name="ns2:PasarelaPagoService"/>
+                <interface name="ns2:PasarelaPago"/>
+            </implementation>
+            <implementation>
+                <by-provider endpoint-name="AlmacenPort" service-name="ns3:AlmacenService"/>
+                <interface name="ns3:Almacen"/>
+            </implementation>
+            <implementation>
+                <by-provider endpoint-name="EnvioPaquetesPort" service-name="ns6:EnvioPaquetesService"/>
+                <interface name="ns6:EnvioPaquetes"/>
+            </implementation>
+        </interface-mapping>
+    </service-assembly>
+</jbi>
