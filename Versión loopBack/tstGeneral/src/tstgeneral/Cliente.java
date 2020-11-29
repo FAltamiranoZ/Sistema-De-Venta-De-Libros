@@ -24,7 +24,12 @@ public class Cliente {
         long i, n, t0, t1, dt;
         String response;
 
-        //Este parámetro recibe la cantidad de solicitudes deseadas
+/*
+Este parámetro recibe la cantidad de solicitudes deseadas; a pesar de que si el 
+programa se corrre desde el estresador nunca sucede que args[1] == null
+debido a como esta creado el estresador, se deja por si se decide ejecutar 
+fuera del estresador
+*/
         if (args[1] != null) {
             n = Integer.parseInt(args[1]);
         } else {

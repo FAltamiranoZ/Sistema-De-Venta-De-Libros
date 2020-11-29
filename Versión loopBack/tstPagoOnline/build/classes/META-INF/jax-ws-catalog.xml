@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://192.168.15.12:8080/proyT01_163314_JFAZ/miWSsuma?WSDL" uri="wsdl/192.168.15.12_8080/proyT01_163314_JFAZ/miWSsuma.wsdl"/>
+    <system systemId="http://192.168.15.12:8080/proyT01_163314_JFAZ/miWSsuma?xsd=1" uri="wsdl/192.168.15.12_8080/proyT01_163314_JFAZ/miWSsuma.xsd_1.xsd"/>
+    <system systemId="http://192.168.15.4:8080/proyT01_163314_JFAZ/miWSsuma?WSDL" uri="wsdl/192.168.15.4_8080/proyT01_163314_JFAZ/miWSsuma.wsdl"/>
+    <system systemId="http://192.168.15.4:8080/proyT01_163314_JFAZ/miWSsuma?xsd=1" uri="wsdl/192.168.15.4_8080/proyT01_163314_JFAZ/miWSsuma.xsd_1.xsd"/>
+    <system systemId="http://192.168.15.4:8080/EscBaileWeb/NewWebService?WSDL" uri="wsdl/192.168.15.4_8080/EscBaileWeb/NewWebService.wsdl"/>
+    <system systemId="http://192.168.15.4:8080/EscBaileWeb/NewWebService?xsd=1" uri="wsdl/192.168.15.4_8080/EscBaileWeb/NewWebService.xsd_1.xsd"/>
+    <system systemId="http://192.168.15.7:8080/EscBaileWeb/NewWebService?WSDL" uri="wsdl/192.168.15.7_8080/EscBaileWeb/NewWebService.wsdl"/>
+    <system systemId="http://192.168.15.7:8080/EscBaileWeb/NewWebService?xsd=1" uri="wsdl/192.168.15.7_8080/EscBaileWeb/NewWebService.xsd_1.xsd"/>
+    <system systemId="http://192.168.1.107:8080/EscBaileWeb/NewWebService?WSDL" uri="wsdl/192.168.1.107_8080/EscBaileWeb/NewWebService.wsdl"/>
+    <system systemId="http://192.168.1.107:8080/EscBaileWeb/NewWebService?xsd=1" uri="wsdl/192.168.1.107_8080/EscBaileWeb/NewWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:9080/VentaLibrosWSDLService/VentaLibrosWSDLPort?WSDL" uri="wsdl/localhost_9080/VentaLibrosWSDLService/VentaLibrosWSDLPort.wsdl"/>
+    <system systemId="http://localhost:8080/MensajeriaExpress/EnvioPaquetesService?WSDL" uri="wsdl/localhost_8080/MensajeriaExpress/EnvioPaquetesService.wsdl"/>
+    <system systemId="http://localhost:8080/MensajeriaExpress/EnvioPaquetesService?xsd=1" uri="wsdl/localhost_8080/MensajeriaExpress/EnvioPaquetesService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/PagoOnline/PasarelaPagoService?WSDL" uri="wsdl/localhost_8080/PagoOnline/PasarelaPagoService.wsdl"/>
     <system systemId="http://localhost:8080/PagoOnline/PasarelaPagoService?xsd=1" uri="wsdl/localhost_8080/PagoOnline/PasarelaPagoService.xsd_1.xsd"/>
 </catalog>

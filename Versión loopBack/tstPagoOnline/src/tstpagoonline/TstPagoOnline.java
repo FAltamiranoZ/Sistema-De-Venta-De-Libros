@@ -15,6 +15,7 @@ public class TstPagoOnline {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        com.adictosaltrabajo.webservice.pasarelapago.PasarelaPagoService service = new com.adictosaltrabajo.webservice.pasarelapago.PasarelaPagoService();
         int n = args.length;
         if (n > 0) {
             n = Integer.parseInt(args[0]);
@@ -22,12 +23,11 @@ public class TstPagoOnline {
             n = 10;
         }
         for (int i = 0; i < n; i++) {
-            System.out.println(facturar("idCliente", 20));
+            System.out.println(facturar("idCliente", 20, service));
         }
     }
 
-    private static String facturar(java.lang.String idCliente, int cuantia) {
-        com.adictosaltrabajo.webservice.pasarelapago.PasarelaPagoService service = new com.adictosaltrabajo.webservice.pasarelapago.PasarelaPagoService();
+    private static String facturar(java.lang.String idCliente, int cuantia, com.adictosaltrabajo.webservice.pasarelapago.PasarelaPagoService service) {
         com.adictosaltrabajo.webservice.pasarelapago.PasarelaPago port = service.getPasarelaPagoPort();
         return port.facturar(idCliente, cuantia);
     }

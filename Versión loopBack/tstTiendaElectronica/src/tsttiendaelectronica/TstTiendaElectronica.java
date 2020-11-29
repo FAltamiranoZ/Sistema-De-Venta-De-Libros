@@ -15,6 +15,7 @@ public class TstTiendaElectronica {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        com.adictosaltrabajo.webservice.almacen.AlmacenService service = new com.adictosaltrabajo.webservice.almacen.AlmacenService();
         int n = args.length;
         if (n > 0) {
             n = Integer.parseInt(args[0]);
@@ -22,12 +23,11 @@ public class TstTiendaElectronica {
             n = 10;
         }
         for (int i = 0; i < n; i++) {
-            System.out.println(comprobarStock("ISBN", 2));
+            System.out.println(comprobarStock("ISBN", 2, service));
         }
     }
 
-    private static Boolean comprobarStock(java.lang.String isbn, int unidades) {
-        com.adictosaltrabajo.webservice.almacen.AlmacenService service = new com.adictosaltrabajo.webservice.almacen.AlmacenService();
+    private static Boolean comprobarStock(java.lang.String isbn, int unidades, com.adictosaltrabajo.webservice.almacen.AlmacenService service) {
         com.adictosaltrabajo.webservice.almacen.Almacen port = service.getAlmacenPort();
         return port.comprobarStock(isbn, unidades);
     }
