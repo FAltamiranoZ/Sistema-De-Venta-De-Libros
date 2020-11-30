@@ -36,17 +36,16 @@ INSERT INTO clientes (nombreCliente, saldo) VALUES
 
 CREATE  TABLE  productos
 (
-  ISBN INT  NOT NULL GENERATED ALWAYS AS IDENTITY 
-     (START WITH 1 ,INCREMENT BY 1) 
-     CONSTRAINT PRODUCTOS_PK PRIMARY KEY,
+  ISBN VARCHAR(100) NOT NULL ,
   nombreLibro VARCHAR(100) NOT NULL ,
-  unidades INT NOT NULL
+  unidades INT NOT NULL ,
+  PRIMARY KEY (ISBN)
 );
 
-INSERT INTO productos (nombreLibro, unidades) VALUES 
-('La comunidad del anillo', 10),
-('Las dos torres', 20),
-('El retorno del rey', 30);
+INSERT INTO productos (ISBN, nombreLibro, unidades) VALUES 
+('978-0-00-000000-0', 'La comunidad del anillo', 10),
+('978-0-00-000000-1', 'Las dos torres', 20),
+('978-0-00-000000-2', 'El retorno del rey', 30);
 
 
 ------------------------------- 

@@ -1,2 +1,4 @@
 El WSDL para poder usar el Composite Application (CA) en el estresador es: http://localhost:9080/VentaLibrosWSDLService/VentaLibrosWSDLPort?WSDL
 Por alguna razón, el CA se hace undeploy cada que se reinicia el servidor, recordar siempre darle deploy
+Por alguna razon, no puedo lanzar dos veces un SQLException en un web Service, así que si quiero usar más de uno, reemplazarlo con un try-catch
+Si cambio el funcionamiento dentro de un web service, solo tengo que darle clean and build al pojo para que funcione, pero si cambio la estructura del web service (Parámetros, return type, etc) entonces además le debo de dar refresh
