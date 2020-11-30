@@ -41,12 +41,6 @@ public class Almacen {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-//        int k = s.executeUpdate("INSERT INTO clientes (nombreCliente, saldo) VALUES ('ClientePrueba2', 1000)");
-//        s.close();
-//        if (k == 1) {
-//            flag = true;
-//        }
         return flag;
     }
 
