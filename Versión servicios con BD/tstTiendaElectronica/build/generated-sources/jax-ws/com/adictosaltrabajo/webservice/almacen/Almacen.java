@@ -26,6 +26,21 @@ public interface Almacen {
 
     /**
      * 
+     * @param idCliente
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "comprobarIdCliente", targetNamespace = "http://almacen.webservice.adictosaltrabajo.com/", className = "com.adictosaltrabajo.webservice.almacen.ComprobarIdCliente")
+    @ResponseWrapper(localName = "comprobarIdClienteResponse", targetNamespace = "http://almacen.webservice.adictosaltrabajo.com/", className = "com.adictosaltrabajo.webservice.almacen.ComprobarIdClienteResponse")
+    @Action(input = "http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteRequest", output = "http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteResponse")
+    public Boolean comprobarIdCliente(
+        @WebParam(name = "idCliente", targetNamespace = "")
+        String idCliente);
+
+    /**
+     * 
      * @param isbn
      * @return
      *     returns java.lang.Boolean
@@ -38,21 +53,6 @@ public interface Almacen {
     public Boolean comprobarISBN(
         @WebParam(name = "ISBN", targetNamespace = "")
         String isbn);
-
-    /**
-     * 
-     * @param idCliente
-     * @return
-     *     returns java.lang.Boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "comprobarIdCliente", targetNamespace = "http://almacen.webservice.adictosaltrabajo.com/", className = "com.adictosaltrabajo.webservice.almacen.ComprobarIdCliente")
-    @ResponseWrapper(localName = "comprobarIdClienteResponse", targetNamespace = "http://almacen.webservice.adictosaltrabajo.com/", className = "com.adictosaltrabajo.webservice.almacen.ComprobarIdClienteResponse")
-    @Action(input = "http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteRequest", output = "http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteResponse")
-    public Boolean comprobarIdCliente(
-        @WebParam(name = "idCliente", targetNamespace = "")
-        int idCliente);
 
     /**
      * 
@@ -74,6 +74,7 @@ public interface Almacen {
 
     /**
      * 
+     * @param idCliente
      * @param unidades
      * @param precioUnidad
      * @return
@@ -88,6 +89,8 @@ public interface Almacen {
         @WebParam(name = "unidades", targetNamespace = "")
         int unidades,
         @WebParam(name = "precioUnidad", targetNamespace = "")
-        int precioUnidad);
+        int precioUnidad,
+        @WebParam(name = "idCliente", targetNamespace = "")
+        String idCliente);
 
 }

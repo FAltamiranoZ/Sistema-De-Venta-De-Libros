@@ -65,10 +65,10 @@ public class Almacen {
     }
 
     @WebMethod(operationName = "comprobarIdCliente")
-    public Boolean comprobarIdCliente(@WebParam(name = "idCliente") int idCliente) {
+    public Boolean comprobarIdCliente(@WebParam(name = "idCliente") String idCliente) {
         boolean flag = false;
         try {
-            ResultSet rs = s.executeQuery("select idCliente from clientes where idCliente = " + idCliente);
+            ResultSet rs = s.executeQuery("select idCliente from clientes where idCliente = '" + idCliente + "'");
             if (rs.next()) {
                 flag = true;
             }
@@ -79,10 +79,10 @@ public class Almacen {
     }
 
     @WebMethod(operationName = "comprobarSaldo")
-    public Boolean comprobarSaldo(@WebParam(name = "unidades") int unidades, @WebParam(name = "precioUnidad") int precioUnidad) {
+    public Boolean comprobarSaldo(@WebParam(name = "unidades") int unidades, @WebParam(name = "precioUnidad") int precioUnidad, @WebParam(name = "idCliente") String idCliente) {
         boolean flag = false;
         try {
-            ResultSet rs = s.executeQuery("select saldo from clientes where saldo > " + (unidades * precioUnidad));
+            ResultSet rs = s.executeQuery("select saldo from clientes where saldo > " + (unidades * precioUnidad) + "and idCliente = '" + idCliente + "'");
             if (rs.next()) {
                 flag = true;
             }

@@ -14,20 +14,19 @@ DROP TABLE empresas;
 
 CREATE  TABLE  clientes
 (
-  idCliente INT  NOT NULL GENERATED ALWAYS AS IDENTITY 
-     (START WITH 1 ,INCREMENT BY 1) 
-     CONSTRAINT CLIENTES_PK PRIMARY KEY,
+  idCliente VARCHAR(100) NOT NULL ,
   nombreCliente VARCHAR(100) NOT NULL ,
-  saldo FLOAT NOT NULL 
+  saldo FLOAT NOT NULL ,
+  PRIMARY KEY (idCliente)
 );
 
-INSERT INTO clientes (nombreCliente, saldo) VALUES 
-('Jose Francisco Altamirano Zevallos', 1000),
-('Sebastian Valderrabano Cabrera', 1000),
-('Fernando Merino Benitez', 1000),
-('America Castrejon Porres', 1000),
-('Rodrigo Castillo Gomez', 1000),
-('Eduardo Daniel Urrutia Ruiz', 1000);
+INSERT INTO clientes (idCliente, nombreCliente, saldo) VALUES 
+('1', 'Jose Francisco Altamirano Zevallos', 1000),
+('2', 'Sebastian Valderrabano Cabrera', 1000),
+('3', 'Fernando Merino Benitez', 1000),
+('4', 'America Castrejon Porres', 1000),
+('5', 'Rodrigo Castillo Gomez', 1000),
+('6', 'Eduardo Daniel Urrutia Ruiz', 1000);
 
 
 ------------------------------- 
@@ -75,7 +74,7 @@ CREATE  TABLE facturas
   idFactura INT  NOT NULL GENERATED ALWAYS AS IDENTITY 
      (START WITH 1 ,INCREMENT BY 1) 
      CONSTRAINT FACTURAS_PK PRIMARY KEY, 
-  idCliente INT  NOT NULL ,
+  idCliente VARCHAR(100) NOT NULL ,
   cuantia FLOAT NOT NULL ,
   CONSTRAINT fk_idCliente
     FOREIGN KEY (idCliente )
@@ -85,11 +84,11 @@ CREATE  TABLE facturas
 );
 
 INSERT INTO facturas (idCliente, cuantia) VALUES 
-(1, 100),
-(1, 800),
-(2, 400),
-(4, 420.69),
-(3, 11.11);
+('1', 100),
+('1', 800),
+('2', 400),
+('4', 420.69),
+('3', 11.11);
 
 
 ------------------------------- 

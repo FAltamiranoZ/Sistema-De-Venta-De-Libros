@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="idCliente" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="idCliente" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,21 +31,29 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ComprobarIdCliente {
 
-    protected int idCliente;
+    protected String idCliente;
 
     /**
      * Obtiene el valor de la propiedad idCliente.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getIdCliente() {
+    public String getIdCliente() {
         return idCliente;
     }
 
     /**
      * Define el valor de la propiedad idCliente.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setIdCliente(int value) {
+    public void setIdCliente(String value) {
         this.idCliente = value;
     }
 

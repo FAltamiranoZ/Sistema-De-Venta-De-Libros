@@ -20,13 +20,13 @@ public class TstTiendaElectronica {
         if (n > 0) {
             n = Integer.parseInt(args[0]);
         } else {
-            n = 10;
+            n = 1;
         }
         for (int i = 0; i < n; i++) {
             System.out.println(comprobarISBN("978-0-00-000000-0", service));
             System.out.println(comprobarStock("978-0-00-000000-0", 5, service));
-            System.out.println(comprobarIdCliente(1, service));
-            System.out.println(comprobarSaldo(5, 10, service));
+            System.out.println(comprobarIdCliente("1", service));
+            System.out.println(comprobarSaldo(5, 10, "1", service));
         }
     }
 
@@ -40,14 +40,14 @@ public class TstTiendaElectronica {
         return port.comprobarStock(isbn, unidades);
     }
 
-    private static Boolean comprobarIdCliente(int idCliente, com.adictosaltrabajo.webservice.almacen.AlmacenService service) {
+    private static Boolean comprobarIdCliente(String idCliente, com.adictosaltrabajo.webservice.almacen.AlmacenService service) {
         com.adictosaltrabajo.webservice.almacen.Almacen port = service.getAlmacenPort();
         return port.comprobarIdCliente(idCliente);
     }
 
-    private static Boolean comprobarSaldo(int unidades, int precioUnidad, com.adictosaltrabajo.webservice.almacen.AlmacenService service) {
+    private static Boolean comprobarSaldo(int unidades, int precioUnidad, String idCliente, com.adictosaltrabajo.webservice.almacen.AlmacenService service) {
         com.adictosaltrabajo.webservice.almacen.Almacen port = service.getAlmacenPort();
-        return port.comprobarSaldo(unidades, precioUnidad);
+        return port.comprobarSaldo(unidades, precioUnidad, idCliente);
     }
 
 }

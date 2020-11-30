@@ -18,6 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="unidades" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="precioUnidad" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="idCliente" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,12 +30,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "comprobarSaldo", propOrder = {
     "unidades",
-    "precioUnidad"
+    "precioUnidad",
+    "idCliente"
 })
 public class ComprobarSaldo {
 
     protected int unidades;
     protected int precioUnidad;
+    protected String idCliente;
 
     /**
      * Obtiene el valor de la propiedad unidades.
@@ -66,6 +69,30 @@ public class ComprobarSaldo {
      */
     public void setPrecioUnidad(int value) {
         this.precioUnidad = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad idCliente.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getIdCliente() {
+        return idCliente;
+    }
+
+    /**
+     * Define el valor de la propiedad idCliente.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setIdCliente(String value) {
+        this.idCliente = value;
     }
 
 }
