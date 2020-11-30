@@ -71,11 +71,10 @@ INSERT INTO empresas (nombreEmpresa) VALUES
 
 CREATE  TABLE facturas
  (
-  idFactura INT  NOT NULL GENERATED ALWAYS AS IDENTITY 
-     (START WITH 1 ,INCREMENT BY 1) 
-     CONSTRAINT FACTURAS_PK PRIMARY KEY, 
+  idFactura VARCHAR(100) NOT NULL ,
   idCliente VARCHAR(100) NOT NULL ,
   cuantia FLOAT NOT NULL ,
+  PRIMARY KEY (idFactura),
   CONSTRAINT fk_idCliente
     FOREIGN KEY (idCliente )
     REFERENCES clientes (idCliente )
@@ -83,12 +82,12 @@ CREATE  TABLE facturas
     ON UPDATE NO ACTION
 );
 
-INSERT INTO facturas (idCliente, cuantia) VALUES 
-('1', 100),
-('1', 800),
-('2', 400),
-('4', 420.69),
-('3', 11.11);
+INSERT INTO facturas (idFactura, idCliente, cuantia) VALUES 
+('1', '1', 100),
+('2', '1', 800),
+('3', '2', 400),
+('4', '4', 420.69),
+('5', '3', 11.11);
 
 
 ------------------------------- 
@@ -102,7 +101,7 @@ CREATE  TABLE pedidos
      CONSTRAINT PEDIDOS_PK PRIMARY KEY, 
   fecha TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
   nombreEmpresa VARCHAR(100)  NOT NULL ,
-  idFactura INT  NOT NULL ,
+  idFactura VARCHAR(100) NOT NULL ,
   CONSTRAINT fk_idFactura
     FOREIGN KEY (idFactura )
     REFERENCES facturas (idFactura )
@@ -116,12 +115,12 @@ CREATE  TABLE pedidos
 );
 
 INSERT INTO pedidos (fecha, nombreEmpresa, idFactura) VALUES 
-(TIMESTAMP('2020-01-24 12:00:00'), 'Amazon', 1),
-(TIMESTAMP('2020-06-30 10:00:00'), 'Correos de Mexico', 1),
-(TIMESTAMP('2020-07-11 04:00:00'), 'DHL', 2),
-(TIMESTAMP('2020-08-18 22:00:00'), 'UPS', 3),
-(TIMESTAMP('2020-10-21 18:00:00'), 'FedEx', 4),
-(TIMESTAMP('2020-11-06 12:00:00'), 'Amazon', 5);
+(TIMESTAMP('2020-01-24 12:00:00'), 'Amazon', '1'),
+(TIMESTAMP('2020-06-30 10:00:00'), 'Correos de Mexico', '1'),
+(TIMESTAMP('2020-07-11 04:00:00'), 'DHL', '2'),
+(TIMESTAMP('2020-08-18 22:00:00'), 'UPS', '3'),
+(TIMESTAMP('2020-10-21 18:00:00'), 'FedEx', '4'),
+(TIMESTAMP('2020-11-06 12:00:00'), 'Amazon', '5');
 
 
 disconnect;
