@@ -5,7 +5,6 @@ DROP TABLE pedidos;
 DROP TABLE facturas;
 DROP TABLE clientes;
 DROP TABLE productos;
-DROP TABLE empresas;
 
 
 ------------------------------- 
@@ -48,24 +47,6 @@ INSERT INTO productos (ISBN, nombreLibro, unidades) VALUES
 
 
 ------------------------------- 
---     EMPRESAS
--------------------------------
-
-CREATE  TABLE  empresas
-(
-  nombreEmpresa VARCHAR(100) NOT NULL ,
-  PRIMARY KEY (nombreEmpresa)
-);
-
-INSERT INTO empresas (nombreEmpresa) VALUES 
-('Amazon'),
-('FedEx'),
-('UPS'),
-('DHL'),
-('Correos de Mexico');
-
-
-------------------------------- 
 --     FACTURAS
 -------------------------------
 
@@ -96,31 +77,18 @@ INSERT INTO facturas (idFactura, idCliente, cuantia) VALUES
 
 CREATE  TABLE pedidos
  (
-  idPedido INT  NOT NULL GENERATED ALWAYS AS IDENTITY 
-     (START WITH 1 ,INCREMENT BY 1) 
-     CONSTRAINT PEDIDOS_PK PRIMARY KEY, 
+  idPedido VARCHAR(100) NOT NULL ,
   fecha TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
   nombreEmpresa VARCHAR(100)  NOT NULL ,
-  idFactura VARCHAR(100) NOT NULL ,
-  CONSTRAINT fk_idFactura
-    FOREIGN KEY (idFactura )
-    REFERENCES facturas (idFactura )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT fk_nombreEmpresa
-    FOREIGN KEY (nombreEmpresa )
-    REFERENCES empresas (nombreEmpresa )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+  PRIMARY KEY (idPedido)
 );
 
-INSERT INTO pedidos (fecha, nombreEmpresa, idFactura) VALUES 
-(TIMESTAMP('2020-01-24 12:00:00'), 'Amazon', '1'),
-(TIMESTAMP('2020-06-30 10:00:00'), 'Correos de Mexico', '1'),
-(TIMESTAMP('2020-07-11 04:00:00'), 'DHL', '2'),
-(TIMESTAMP('2020-08-18 22:00:00'), 'UPS', '3'),
-(TIMESTAMP('2020-10-21 18:00:00'), 'FedEx', '4'),
-(TIMESTAMP('2020-11-06 12:00:00'), 'Amazon', '5');
+INSERT INTO pedidos (idPedido, fecha, nombreEmpresa) VALUES 
+('1', TIMESTAMP('2020-01-24 12:00:00'), 'Amazon'),
+('2', TIMESTAMP('2020-06-30 10:00:00'), 'Correos de Mexico'),
+('3', TIMESTAMP('2020-07-11 04:00:00'), 'DHL'),
+('4', TIMESTAMP('2020-08-18 22:00:00'), 'UPS'),
+('5', TIMESTAMP('2020-10-21 18:00:00'), 'FedEx');
 
 
 disconnect;
