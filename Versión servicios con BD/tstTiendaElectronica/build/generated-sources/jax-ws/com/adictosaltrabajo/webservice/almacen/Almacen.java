@@ -26,36 +26,6 @@ public interface Almacen {
 
     /**
      * 
-     * @param idCliente
-     * @return
-     *     returns java.lang.Boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "comprobarIdCliente", targetNamespace = "http://almacen.webservice.adictosaltrabajo.com/", className = "com.adictosaltrabajo.webservice.almacen.ComprobarIdCliente")
-    @ResponseWrapper(localName = "comprobarIdClienteResponse", targetNamespace = "http://almacen.webservice.adictosaltrabajo.com/", className = "com.adictosaltrabajo.webservice.almacen.ComprobarIdClienteResponse")
-    @Action(input = "http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteRequest", output = "http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteResponse")
-    public Boolean comprobarIdCliente(
-        @WebParam(name = "idCliente", targetNamespace = "")
-        String idCliente);
-
-    /**
-     * 
-     * @param isbn
-     * @return
-     *     returns java.lang.Boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "comprobarISBN", targetNamespace = "http://almacen.webservice.adictosaltrabajo.com/", className = "com.adictosaltrabajo.webservice.almacen.ComprobarISBN")
-    @ResponseWrapper(localName = "comprobarISBNResponse", targetNamespace = "http://almacen.webservice.adictosaltrabajo.com/", className = "com.adictosaltrabajo.webservice.almacen.ComprobarISBNResponse")
-    @Action(input = "http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarISBNRequest", output = "http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarISBNResponse")
-    public Boolean comprobarISBN(
-        @WebParam(name = "ISBN", targetNamespace = "")
-        String isbn);
-
-    /**
-     * 
      * @param isbn
      * @param unidades
      * @return
@@ -71,6 +41,21 @@ public interface Almacen {
         String isbn,
         @WebParam(name = "unidades", targetNamespace = "")
         int unidades);
+
+    /**
+     * 
+     * @param isbn
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "comprobarISBN", targetNamespace = "http://almacen.webservice.adictosaltrabajo.com/", className = "com.adictosaltrabajo.webservice.almacen.ComprobarISBN")
+    @ResponseWrapper(localName = "comprobarISBNResponse", targetNamespace = "http://almacen.webservice.adictosaltrabajo.com/", className = "com.adictosaltrabajo.webservice.almacen.ComprobarISBNResponse")
+    @Action(input = "http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarISBNRequest", output = "http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarISBNResponse")
+    public Boolean comprobarISBN(
+        @WebParam(name = "ISBN", targetNamespace = "")
+        String isbn);
 
     /**
      * 
@@ -90,6 +75,21 @@ public interface Almacen {
         int unidades,
         @WebParam(name = "precioUnidad", targetNamespace = "")
         int precioUnidad,
+        @WebParam(name = "idCliente", targetNamespace = "")
+        String idCliente);
+
+    /**
+     * 
+     * @param idCliente
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "comprobarIdCliente", targetNamespace = "http://almacen.webservice.adictosaltrabajo.com/", className = "com.adictosaltrabajo.webservice.almacen.ComprobarIdCliente")
+    @ResponseWrapper(localName = "comprobarIdClienteResponse", targetNamespace = "http://almacen.webservice.adictosaltrabajo.com/", className = "com.adictosaltrabajo.webservice.almacen.ComprobarIdClienteResponse")
+    @Action(input = "http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteRequest", output = "http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteResponse")
+    public Boolean comprobarIdCliente(
         @WebParam(name = "idCliente", targetNamespace = "")
         String idCliente);
 

@@ -46,7 +46,7 @@ public class Almacen {
         try {
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/serviciosVenta", "app", "app");
             Statement s = con.createStatement();
-            ResultSet rs = s.executeQuery("select ISBN from productos where ISBN = '" + ISBN + "' and unidades > " + unidades);
+            ResultSet rs = s.executeQuery("select ISBN from productos where ISBN = '" + ISBN + "' and unidades >= " + unidades);
             if (rs.next()) {
                 flag = true;
             }
@@ -84,7 +84,7 @@ public class Almacen {
         try {
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/serviciosVenta", "app", "app");
             Statement s = con.createStatement();
-            ResultSet rs = s.executeQuery("select saldo from clientes where saldo > " + (unidades * precioUnidad) + "and idCliente = '" + idCliente + "'");
+            ResultSet rs = s.executeQuery("select saldo from clientes where saldo >= " + (unidades * precioUnidad) + "and idCliente = '" + idCliente + "'");
             if (rs.next()) {
                 flag = true;
             }

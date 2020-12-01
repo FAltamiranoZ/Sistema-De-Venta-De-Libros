@@ -4,11 +4,11 @@
 <xsd:import namespace="http://almacen.webservice.adictosaltrabajo.com/" schemaLocation="http://localhost:8080/TiendaElectronica/AlmacenService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="comprobarIdCliente">
-<part name="parameters" element="tns:comprobarIdCliente"/>
+<message name="comprobarStock">
+<part name="parameters" element="tns:comprobarStock"/>
 </message>
-<message name="comprobarIdClienteResponse">
-<part name="parameters" element="tns:comprobarIdClienteResponse"/>
+<message name="comprobarStockResponse">
+<part name="parameters" element="tns:comprobarStockResponse"/>
 </message>
 <message name="comprobarISBN">
 <part name="parameters" element="tns:comprobarISBN"/>
@@ -16,39 +16,39 @@
 <message name="comprobarISBNResponse">
 <part name="parameters" element="tns:comprobarISBNResponse"/>
 </message>
-<message name="comprobarStock">
-<part name="parameters" element="tns:comprobarStock"/>
-</message>
-<message name="comprobarStockResponse">
-<part name="parameters" element="tns:comprobarStockResponse"/>
-</message>
 <message name="comprobarSaldo">
 <part name="parameters" element="tns:comprobarSaldo"/>
 </message>
 <message name="comprobarSaldoResponse">
 <part name="parameters" element="tns:comprobarSaldoResponse"/>
 </message>
+<message name="comprobarIdCliente">
+<part name="parameters" element="tns:comprobarIdCliente"/>
+</message>
+<message name="comprobarIdClienteResponse">
+<part name="parameters" element="tns:comprobarIdClienteResponse"/>
+</message>
 <portType name="Almacen">
-<operation name="comprobarIdCliente">
-<input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteRequest" message="tns:comprobarIdCliente"/>
-<output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteResponse" message="tns:comprobarIdClienteResponse"/>
+<operation name="comprobarStock">
+<input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarStockRequest" message="tns:comprobarStock"/>
+<output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarStockResponse" message="tns:comprobarStockResponse"/>
 </operation>
 <operation name="comprobarISBN">
 <input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarISBNRequest" message="tns:comprobarISBN"/>
 <output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarISBNResponse" message="tns:comprobarISBNResponse"/>
 </operation>
-<operation name="comprobarStock">
-<input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarStockRequest" message="tns:comprobarStock"/>
-<output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarStockResponse" message="tns:comprobarStockResponse"/>
-</operation>
 <operation name="comprobarSaldo">
 <input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarSaldoRequest" message="tns:comprobarSaldo"/>
 <output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarSaldoResponse" message="tns:comprobarSaldoResponse"/>
 </operation>
+<operation name="comprobarIdCliente">
+<input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteRequest" message="tns:comprobarIdCliente"/>
+<output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteResponse" message="tns:comprobarIdClienteResponse"/>
+</operation>
 </portType>
 <binding name="AlmacenPortBinding" type="tns:Almacen">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="comprobarIdCliente">
+<operation name="comprobarStock">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -66,7 +66,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="comprobarStock">
+<operation name="comprobarSaldo">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -75,7 +75,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="comprobarSaldo">
+<operation name="comprobarIdCliente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
