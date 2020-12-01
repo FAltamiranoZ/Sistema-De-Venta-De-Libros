@@ -21,7 +21,7 @@ public class TstMensajeriaExpress {
         if (n > 0) {
             n = Integer.parseInt(args[0]);
         } else {
-            n = 16;
+            n = 116;
         }
         for (int i = 6; i < n; i++) {
             try {

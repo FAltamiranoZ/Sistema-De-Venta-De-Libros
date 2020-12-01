@@ -20,7 +20,7 @@ public class TstTiendaElectronica {
         if (n > 0) {
             n = Integer.parseInt(args[0]);
         } else {
-            n = 1;
+            n = 100;
         }
         for (int i = 0; i < n; i++) {
             System.out.println(comprobarISBN("978-0-00-000000-0", service));

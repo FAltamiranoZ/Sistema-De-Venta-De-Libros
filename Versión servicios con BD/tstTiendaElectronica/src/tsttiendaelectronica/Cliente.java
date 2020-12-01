@@ -41,9 +41,9 @@ public class Cliente {
             com.adictosaltrabajo.webservice.almacen.AlmacenService service = new com.adictosaltrabajo.webservice.almacen.AlmacenService();
             for (i = 0; i < n; i++) {
                 t0 = System.currentTimeMillis();
-                response = comprobarISBN("ISBN", service);
-                response = comprobarStock("978-0-00-000000-0", 5, service);
-                response = comprobarIdCliente("1", service);
+                comprobarISBN("ISBN", service);
+                comprobarStock("978-0-00-000000-0", 5, service);
+                comprobarIdCliente("1", service);
                 response = comprobarSaldo(5, 10, "1", service);
                 t1 = System.currentTimeMillis();
                 dt = t1 - t0;

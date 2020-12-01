@@ -41,6 +41,7 @@ public class Cliente {
             com.adictosaltrabajo.webservice.pasarelapago.PasarelaPagoService service = new com.adictosaltrabajo.webservice.pasarelapago.PasarelaPagoService();
             for (i = 0; i < n; i++) {
                 t0 = System.currentTimeMillis();
+                actualizarInventario("6", 20, "978-0-00-000000-2", 10, service);
                 response = facturar("6", 20, service);
                 t1 = System.currentTimeMillis();
                 dt = t1 - t0;
@@ -70,6 +71,11 @@ public class Cliente {
     private static String facturar(java.lang.String idCliente, int cuantia, com.adictosaltrabajo.webservice.pasarelapago.PasarelaPagoService service) {
         com.adictosaltrabajo.webservice.pasarelapago.PasarelaPago port = service.getPasarelaPagoPort();
         return port.facturar(idCliente, cuantia);
+    }
+
+    private static boolean actualizarInventario(java.lang.String idCliente, int cuantia, java.lang.String isbn, int unidades, com.adictosaltrabajo.webservice.pasarelapago.PasarelaPagoService service) {
+        com.adictosaltrabajo.webservice.pasarelapago.PasarelaPago port = service.getPasarelaPagoPort();
+        return port.actualizarInventario(idCliente, cuantia, isbn, unidades);
     }
 
 }

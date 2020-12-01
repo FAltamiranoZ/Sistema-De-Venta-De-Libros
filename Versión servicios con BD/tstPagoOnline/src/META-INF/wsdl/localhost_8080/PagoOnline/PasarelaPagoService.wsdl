@@ -10,15 +10,34 @@
 <message name="facturarResponse">
 <part name="parameters" element="tns:facturarResponse"/>
 </message>
+<message name="actualizarInventario">
+<part name="parameters" element="tns:actualizarInventario"/>
+</message>
+<message name="actualizarInventarioResponse">
+<part name="parameters" element="tns:actualizarInventarioResponse"/>
+</message>
 <portType name="PasarelaPago">
 <operation name="facturar">
 <input wsam:Action="http://pasarelapago.webservice.adictosaltrabajo.com/PasarelaPago/facturarRequest" message="tns:facturar"/>
 <output wsam:Action="http://pasarelapago.webservice.adictosaltrabajo.com/PasarelaPago/facturarResponse" message="tns:facturarResponse"/>
 </operation>
+<operation name="actualizarInventario">
+<input wsam:Action="http://pasarelapago.webservice.adictosaltrabajo.com/PasarelaPago/actualizarInventarioRequest" message="tns:actualizarInventario"/>
+<output wsam:Action="http://pasarelapago.webservice.adictosaltrabajo.com/PasarelaPago/actualizarInventarioResponse" message="tns:actualizarInventarioResponse"/>
+</operation>
 </portType>
 <binding name="PasarelaPagoPortBinding" type="tns:PasarelaPago">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="facturar">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="actualizarInventario">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

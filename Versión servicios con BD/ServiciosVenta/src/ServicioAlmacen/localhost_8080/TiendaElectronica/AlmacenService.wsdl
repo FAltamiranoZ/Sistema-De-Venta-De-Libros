@@ -4,6 +4,12 @@
 <xsd:import namespace="http://almacen.webservice.adictosaltrabajo.com/" schemaLocation="http://localhost:8080/TiendaElectronica/AlmacenService?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="comprobarStock">
+<part name="parameters" element="tns:comprobarStock"/>
+</message>
+<message name="comprobarStockResponse">
+<part name="parameters" element="tns:comprobarStockResponse"/>
+</message>
 <message name="comprobarISBN">
 <part name="parameters" element="tns:comprobarISBN"/>
 </message>
@@ -16,12 +22,6 @@
 <message name="comprobarSaldoResponse">
 <part name="parameters" element="tns:comprobarSaldoResponse"/>
 </message>
-<message name="comprobarStock">
-<part name="parameters" element="tns:comprobarStock"/>
-</message>
-<message name="comprobarStockResponse">
-<part name="parameters" element="tns:comprobarStockResponse"/>
-</message>
 <message name="comprobarIdCliente">
 <part name="parameters" element="tns:comprobarIdCliente"/>
 </message>
@@ -29,6 +29,10 @@
 <part name="parameters" element="tns:comprobarIdClienteResponse"/>
 </message>
 <portType name="Almacen">
+<operation name="comprobarStock">
+<input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarStockRequest" message="tns:comprobarStock"/>
+<output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarStockResponse" message="tns:comprobarStockResponse"/>
+</operation>
 <operation name="comprobarISBN">
 <input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarISBNRequest" message="tns:comprobarISBN"/>
 <output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarISBNResponse" message="tns:comprobarISBNResponse"/>
@@ -37,10 +41,6 @@
 <input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarSaldoRequest" message="tns:comprobarSaldo"/>
 <output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarSaldoResponse" message="tns:comprobarSaldoResponse"/>
 </operation>
-<operation name="comprobarStock">
-<input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarStockRequest" message="tns:comprobarStock"/>
-<output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarStockResponse" message="tns:comprobarStockResponse"/>
-</operation>
 <operation name="comprobarIdCliente">
 <input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteRequest" message="tns:comprobarIdCliente"/>
 <output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteResponse" message="tns:comprobarIdClienteResponse"/>
@@ -48,6 +48,15 @@
 </portType>
 <binding name="AlmacenPortBinding" type="tns:Almacen">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="comprobarStock">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="comprobarISBN">
 <soap:operation soapAction=""/>
 <input>
@@ -58,15 +67,6 @@
 </output>
 </operation>
 <operation name="comprobarSaldo">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="comprobarStock">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

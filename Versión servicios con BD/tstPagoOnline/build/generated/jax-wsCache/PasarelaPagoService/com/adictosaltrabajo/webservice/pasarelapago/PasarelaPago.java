@@ -42,4 +42,28 @@ public interface PasarelaPago {
         @WebParam(name = "cuantia", targetNamespace = "")
         int cuantia);
 
+    /**
+     * 
+     * @param idCliente
+     * @param cuantia
+     * @param isbn
+     * @param unidades
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "actualizarInventario", targetNamespace = "http://pasarelapago.webservice.adictosaltrabajo.com/", className = "com.adictosaltrabajo.webservice.pasarelapago.ActualizarInventario")
+    @ResponseWrapper(localName = "actualizarInventarioResponse", targetNamespace = "http://pasarelapago.webservice.adictosaltrabajo.com/", className = "com.adictosaltrabajo.webservice.pasarelapago.ActualizarInventarioResponse")
+    @Action(input = "http://pasarelapago.webservice.adictosaltrabajo.com/PasarelaPago/actualizarInventarioRequest", output = "http://pasarelapago.webservice.adictosaltrabajo.com/PasarelaPago/actualizarInventarioResponse")
+    public Boolean actualizarInventario(
+        @WebParam(name = "idCliente", targetNamespace = "")
+        String idCliente,
+        @WebParam(name = "cuantia", targetNamespace = "")
+        int cuantia,
+        @WebParam(name = "ISBN", targetNamespace = "")
+        String isbn,
+        @WebParam(name = "unidades", targetNamespace = "")
+        int unidades);
+
 }

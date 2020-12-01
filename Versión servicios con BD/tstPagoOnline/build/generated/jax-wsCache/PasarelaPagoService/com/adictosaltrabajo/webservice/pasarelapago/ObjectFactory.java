@@ -24,14 +24,32 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _ActualizarInventarioResponse_QNAME = new QName("http://pasarelapago.webservice.adictosaltrabajo.com/", "actualizarInventarioResponse");
     private final static QName _Facturar_QNAME = new QName("http://pasarelapago.webservice.adictosaltrabajo.com/", "facturar");
     private final static QName _FacturarResponse_QNAME = new QName("http://pasarelapago.webservice.adictosaltrabajo.com/", "facturarResponse");
+    private final static QName _ActualizarInventario_QNAME = new QName("http://pasarelapago.webservice.adictosaltrabajo.com/", "actualizarInventario");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.adictosaltrabajo.webservice.pasarelapago
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link ActualizarInventarioResponse }
+     * 
+     */
+    public ActualizarInventarioResponse createActualizarInventarioResponse() {
+        return new ActualizarInventarioResponse();
+    }
+
+    /**
+     * Create an instance of {@link ActualizarInventario }
+     * 
+     */
+    public ActualizarInventario createActualizarInventario() {
+        return new ActualizarInventario();
     }
 
     /**
@@ -51,6 +69,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ActualizarInventarioResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://pasarelapago.webservice.adictosaltrabajo.com/", name = "actualizarInventarioResponse")
+    public JAXBElement<ActualizarInventarioResponse> createActualizarInventarioResponse(ActualizarInventarioResponse value) {
+        return new JAXBElement<ActualizarInventarioResponse>(_ActualizarInventarioResponse_QNAME, ActualizarInventarioResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Facturar }{@code >}}
      * 
      */
@@ -66,6 +93,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://pasarelapago.webservice.adictosaltrabajo.com/", name = "facturarResponse")
     public JAXBElement<FacturarResponse> createFacturarResponse(FacturarResponse value) {
         return new JAXBElement<FacturarResponse>(_FacturarResponse_QNAME, FacturarResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ActualizarInventario }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://pasarelapago.webservice.adictosaltrabajo.com/", name = "actualizarInventario")
+    public JAXBElement<ActualizarInventario> createActualizarInventario(ActualizarInventario value) {
+        return new JAXBElement<ActualizarInventario>(_ActualizarInventario_QNAME, ActualizarInventario.class, null, value);
     }
 
 }
