@@ -15,11 +15,47 @@
     <binding name="casaBinding1" type="ns:VentaLibrosWSDLPortType">
         <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
         <operation name="VentaLibrosWSDLOperation">
-            <soap:operation/>
+            <soap:operation soapAction="VentaLibrosWSDLOperation"/>
             <input name="input1">
                 <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
             </input>
             <output name="output1">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </output>
+        </operation>
+        <operation name="NewClient">
+            <soap:operation soapAction="NewClient"/>
+            <input name="input2">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </input>
+            <output name="output2">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </output>
+        </operation>
+        <operation name="NewProduct">
+            <soap:operation soapAction="NewProduct"/>
+            <input name="input3">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </input>
+            <output name="output3">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </output>
+        </operation>
+        <operation name="ModifyClient">
+            <soap:operation soapAction="ModifyClient"/>
+            <input name="input4">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </input>
+            <output name="output4">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </output>
+        </operation>
+        <operation name="ModifyProduct">
+            <soap:operation soapAction="ModifyProduct"/>
+            <input name="input5">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </input>
+            <output name="output5">
                 <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
             </output>
         </operation>

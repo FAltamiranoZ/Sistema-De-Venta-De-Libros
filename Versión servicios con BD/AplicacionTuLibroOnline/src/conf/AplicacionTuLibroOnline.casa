@@ -8,8 +8,8 @@
         <endpoint endpoint-name="casaPort1" interface-name="ns4:VentaLibrosWSDLPortType" name="endpoint5" service-name="ns5:AplicacionTuLibroOnlineService1"/>
         <endpoint display-name="VentaLibros" endpoint-name="VentaLibrosWSDLPortTypeRole_myRole" file-path="serviciosVenta.bpel" interface-name="ns4:VentaLibrosWSDLPortType" name="endpoint6" process-name="serviciosVenta" service-name="ns6:VentaLibros"/>
         <endpoint display-name="ServicioAlmacen" endpoint-name="AlmacenRole_partnerRole" file-path="serviciosVenta.bpel" interface-name="ns2:Almacen" name="endpoint7" process-name="serviciosVenta" service-name="ns6:ServicioAlmacen"/>
-        <endpoint display-name="ServicioMensajeria" endpoint-name="EnvioPaquetesRole_partnerRole" file-path="serviciosVenta.bpel" interface-name="ns3:EnvioPaquetes" name="endpoint8" process-name="serviciosVenta" service-name="ns6:ServicioMensajeria"/>
-        <endpoint display-name="ServicioPago" endpoint-name="PasarelaPagoRole_partnerRole" file-path="serviciosVenta.bpel" interface-name="ns1:PasarelaPago" name="endpoint9" process-name="serviciosVenta" service-name="ns6:ServicioPago"/>
+        <endpoint display-name="ServicioPago" endpoint-name="PasarelaPagoRole_partnerRole" file-path="serviciosVenta.bpel" interface-name="ns1:PasarelaPago" name="endpoint8" process-name="serviciosVenta" service-name="ns6:ServicioPago"/>
+        <endpoint display-name="ServicioMensajeria" endpoint-name="EnvioPaquetesRole_partnerRole" file-path="serviciosVenta.bpel" interface-name="ns3:EnvioPaquetes" name="endpoint9" process-name="serviciosVenta" service-name="ns6:ServicioMensajeria"/>
     </endpoints>
     <service-units>
         <service-engine-service-unit artifacts-zip="ServiciosVenta.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="AplicacionTuLibroOnline-ServiciosVenta" unit-name="ServiciosVenta" unknown="false" x="148" y="99">
@@ -20,7 +20,7 @@
         </service-engine-service-unit>
         <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="AplicacionTuLibroOnline-sun-http-binding" unit-name="sun-http-binding">
             <ports>
-                <port bindingType="soap" x="67" y="388">
+                <port bindingType="soap" x="67" y="419">
                     <link xlink:href="../jbiasa/AplicacionTuLibroOnline.wsdl#xpointer(/definitions/service[@name='AplicacionTuLibroOnlineService1']/port[@name='casaPort1'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint5"/>
                     <provides endpoint="endpoint5"/>
@@ -49,11 +49,11 @@
         </binding-component-service-unit>
     </service-units>
     <connections>
-        <connection consumer="endpoint9" mode="" provider="endpoint1" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint8" mode="" provider="endpoint1" route-type="" routing-rule="" state="unchanged"/>
         <connection consumer="endpoint7" mode="" provider="endpoint2" route-type="" routing-rule="" state="unchanged"/>
         <connection consumer="endpoint5" mode="" provider="endpoint6" route-type="direct" routing-rule="" state="new"/>
         <connection consumer="endpoint4" mode="" provider="endpoint6" route-type="" routing-rule="" state="unchanged"/>
-        <connection consumer="endpoint8" mode="" provider="endpoint3" route-type="" routing-rule="" state="unchanged"/>
+        <connection consumer="endpoint9" mode="" provider="endpoint3" route-type="" routing-rule="" state="unchanged"/>
     </connections>
     <porttypes>
         <link xlink:href="../jbiasa/AplicacionTuLibroOnline.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>

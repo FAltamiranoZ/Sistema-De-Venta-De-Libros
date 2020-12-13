@@ -35,11 +35,11 @@ public class PasarelaPago {
             rs = s.executeQuery("select max(CAST(idFactura as int)) from facturas");
             rs.next();
             idFactura = rs.getString(1);
-            System.out.println(idFactura);
+//            System.out.println(idFactura);
             int temp = Integer.parseInt(idFactura) + 1;
-            System.out.println(temp);
+//            System.out.println(temp);
             idFactura = Integer.toString(temp);
-            System.out.println("INSERT INTO facturas (idFactura, idCliente, cuantia) VALUES ('" + idFactura + "', '" + idCliente + "', " + cuantia + ")");
+//            System.out.println("INSERT INTO facturas (idFactura, idCliente, cuantia) VALUES ('" + idFactura + "', '" + idCliente + "', " + cuantia + ")");
             s.executeUpdate("INSERT INTO facturas (idFactura, idCliente, cuantia) VALUES ('" + idFactura + "', '" + idCliente + "', " + cuantia + ")");
             rs.close();
             s.close();
@@ -68,26 +68,26 @@ public class PasarelaPago {
             Statement s = con.createStatement();
             ResultSet rs1, rs2;
 
-            System.out.println(idCliente);
-            System.out.println(cuantia);
-            System.out.println(ISBN);
-            System.out.println(unidades);
-            System.out.println("select saldo from clientes where idcliente = '" + idCliente + "'");
+//            System.out.println(idCliente);
+//            System.out.println(cuantia);
+//            System.out.println(ISBN);
+//            System.out.println(unidades);
+//            System.out.println("select saldo from clientes where idcliente = '" + idCliente + "'");
             rs1 = s.executeQuery("select saldo from clientes where idcliente = '" + idCliente + "'");
 
             rs1.next();
             saldo = rs1.getFloat(1);
-            System.out.println(saldo);
-            System.out.println("update clientes set saldo = " + (saldo - cuantia) + " where idcliente = '" + idCliente + "'");
+//            System.out.println(saldo);
+//            System.out.println("update clientes set saldo = " + (saldo - cuantia) + " where idcliente = '" + idCliente + "'");
             s.executeUpdate("update clientes set saldo = " + (saldo - cuantia) + " where idcliente = '" + idCliente + "'");
             rs1.close();
 
-            System.out.println("select unidades from productos where ISBN = '" + ISBN + "'");
+//            System.out.println("select unidades from productos where ISBN = '" + ISBN + "'");
             rs2 = s.executeQuery("select unidades from productos where ISBN = '" + ISBN + "'");
             rs2.next();
             unidadesTotales = rs2.getInt(1);
-            System.out.println(unidadesTotales);
-            System.out.println("update productos set unidades = " + (unidadesTotales - unidades) + " where ISBN = '" + ISBN + "'");
+//            System.out.println(unidadesTotales);
+//            System.out.println("update productos set unidades = " + (unidadesTotales - unidades) + " where ISBN = '" + ISBN + "'");
             s.executeUpdate("update productos set unidades = " + (unidadesTotales - unidades) + " where ISBN = '" + ISBN + "'");
             rs2.close();
             s.close();

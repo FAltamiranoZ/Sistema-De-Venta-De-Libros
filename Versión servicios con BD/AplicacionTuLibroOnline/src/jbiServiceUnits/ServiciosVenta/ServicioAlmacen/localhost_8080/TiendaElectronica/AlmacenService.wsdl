@@ -4,11 +4,17 @@
 <xsd:import namespace="http://almacen.webservice.adictosaltrabajo.com/" schemaLocation="http://localhost:8080/TiendaElectronica/AlmacenService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="comprobarStock">
-<part name="parameters" element="tns:comprobarStock"/>
+<message name="modificarProducto">
+<part name="parameters" element="tns:modificarProducto"/>
 </message>
-<message name="comprobarStockResponse">
-<part name="parameters" element="tns:comprobarStockResponse"/>
+<message name="modificarProductoResponse">
+<part name="parameters" element="tns:modificarProductoResponse"/>
+</message>
+<message name="comprobarIdCliente">
+<part name="parameters" element="tns:comprobarIdCliente"/>
+</message>
+<message name="comprobarIdClienteResponse">
+<part name="parameters" element="tns:comprobarIdClienteResponse"/>
 </message>
 <message name="comprobarISBN">
 <part name="parameters" element="tns:comprobarISBN"/>
@@ -22,16 +28,38 @@
 <message name="comprobarSaldoResponse">
 <part name="parameters" element="tns:comprobarSaldoResponse"/>
 </message>
-<message name="comprobarIdCliente">
-<part name="parameters" element="tns:comprobarIdCliente"/>
+<message name="modificarCliente">
+<part name="parameters" element="tns:modificarCliente"/>
 </message>
-<message name="comprobarIdClienteResponse">
-<part name="parameters" element="tns:comprobarIdClienteResponse"/>
+<message name="modificarClienteResponse">
+<part name="parameters" element="tns:modificarClienteResponse"/>
+</message>
+<message name="altaProducto">
+<part name="parameters" element="tns:altaProducto"/>
+</message>
+<message name="altaProductoResponse">
+<part name="parameters" element="tns:altaProductoResponse"/>
+</message>
+<message name="comprobarStock">
+<part name="parameters" element="tns:comprobarStock"/>
+</message>
+<message name="comprobarStockResponse">
+<part name="parameters" element="tns:comprobarStockResponse"/>
+</message>
+<message name="altaCliente">
+<part name="parameters" element="tns:altaCliente"/>
+</message>
+<message name="altaClienteResponse">
+<part name="parameters" element="tns:altaClienteResponse"/>
 </message>
 <portType name="Almacen">
-<operation name="comprobarStock">
-<input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarStockRequest" message="tns:comprobarStock"/>
-<output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarStockResponse" message="tns:comprobarStockResponse"/>
+<operation name="modificarProducto">
+<input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/modificarProductoRequest" message="tns:modificarProducto"/>
+<output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/modificarProductoResponse" message="tns:modificarProductoResponse"/>
+</operation>
+<operation name="comprobarIdCliente">
+<input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteRequest" message="tns:comprobarIdCliente"/>
+<output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteResponse" message="tns:comprobarIdClienteResponse"/>
 </operation>
 <operation name="comprobarISBN">
 <input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarISBNRequest" message="tns:comprobarISBN"/>
@@ -41,14 +69,35 @@
 <input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarSaldoRequest" message="tns:comprobarSaldo"/>
 <output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarSaldoResponse" message="tns:comprobarSaldoResponse"/>
 </operation>
-<operation name="comprobarIdCliente">
-<input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteRequest" message="tns:comprobarIdCliente"/>
-<output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarIdClienteResponse" message="tns:comprobarIdClienteResponse"/>
+<operation name="modificarCliente">
+<input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/modificarClienteRequest" message="tns:modificarCliente"/>
+<output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/modificarClienteResponse" message="tns:modificarClienteResponse"/>
+</operation>
+<operation name="altaProducto">
+<input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/altaProductoRequest" message="tns:altaProducto"/>
+<output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/altaProductoResponse" message="tns:altaProductoResponse"/>
+</operation>
+<operation name="comprobarStock">
+<input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarStockRequest" message="tns:comprobarStock"/>
+<output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/comprobarStockResponse" message="tns:comprobarStockResponse"/>
+</operation>
+<operation name="altaCliente">
+<input wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/altaClienteRequest" message="tns:altaCliente"/>
+<output wsam:Action="http://almacen.webservice.adictosaltrabajo.com/Almacen/altaClienteResponse" message="tns:altaClienteResponse"/>
 </operation>
 </portType>
 <binding name="AlmacenPortBinding" type="tns:Almacen">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="comprobarStock">
+<operation name="modificarProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="comprobarIdCliente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -75,7 +124,34 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="comprobarIdCliente">
+<operation name="modificarCliente">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="altaProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="comprobarStock">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="altaCliente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

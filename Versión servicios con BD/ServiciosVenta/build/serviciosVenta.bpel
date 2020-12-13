@@ -13,22 +13,39 @@
     <import namespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" location="DescriptorBPEL/VentaLibrosWSDL.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://enterprise.netbeans.org/bpel/AlmacenServiceWrapper" location="AlmacenServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://almacen.webservice.adictosaltrabajo.com/" location="http://localhost:8080/TiendaElectronica/AlmacenService?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
-    <import namespace="http://enterprise.netbeans.org/bpel/EnvioPaquetesServiceWrapper" location="EnvioPaquetesServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
-    <import namespace="http://mensajeria.webservice.adictosaltrabajo.com/" location="http://localhost:8080/MensajeriaExpress/EnvioPaquetesService?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://enterprise.netbeans.org/bpel/PasarelaPagoServiceWrapper" location="PasarelaPagoServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://pasarelapago.webservice.adictosaltrabajo.com/" location="http://localhost:8080/PagoOnline/PasarelaPagoService?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/EnvioPaquetesServiceWrapper" location="EnvioPaquetesServiceWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://mensajeria.webservice.adictosaltrabajo.com/" location="http://localhost:8080/MensajeriaExpress/EnvioPaquetesService?WSDL" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <partnerLinks>
         <partnerLink name="ServicioAlmacen" xmlns:tns="http://enterprise.netbeans.org/bpel/AlmacenServiceWrapper" partnerLinkType="tns:AlmacenLinkType" partnerRole="AlmacenRole"/>
-        <partnerLink name="ServicioMensajeria" xmlns:tns="http://enterprise.netbeans.org/bpel/EnvioPaquetesServiceWrapper" partnerLinkType="tns:EnvioPaquetesLinkType" partnerRole="EnvioPaquetesRole"/>
         <partnerLink name="ServicioPago" xmlns:tns="http://enterprise.netbeans.org/bpel/PasarelaPagoServiceWrapper" partnerLinkType="tns:PasarelaPagoLinkType" partnerRole="PasarelaPagoRole"/>
+        <partnerLink name="ServicioMensajeria" xmlns:tns="http://enterprise.netbeans.org/bpel/EnvioPaquetesServiceWrapper" partnerLinkType="tns:EnvioPaquetesLinkType" partnerRole="EnvioPaquetesRole"/>
         <partnerLink name="VentaLibros" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" partnerLinkType="tns:VentaLibrosWSDL" myRole="VentaLibrosWSDLPortTypeRole"/>
     </partnerLinks>
     <variables>
+        <variable name="ModifyProductOut1" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperation1Response3"/>
+        <variable name="ModifyProductOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperation1Response3"/>
+        <variable name="ModifyClientOut1" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperation1Response2"/>
+        <variable name="ModifyClientOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperation1Response2"/>
+        <variable name="NewProductOut1" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperation1Response1"/>
+        <variable name="NewProductOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperation1Response1"/>
+        <variable name="NewClientOut1" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperation1Response"/>
+        <variable name="NewClientOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperation1Response"/>
+        <variable name="ModificarProductoOut" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" messageType="tns:modificarProductoResponse"/>
+        <variable name="ModificarProductoIn" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" messageType="tns:modificarProducto"/>
+        <variable name="ModificarClienteOut" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" messageType="tns:modificarClienteResponse"/>
+        <variable name="ModificarClienteIn" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" messageType="tns:modificarCliente"/>
+        <variable name="AltaProductoOut" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" messageType="tns:altaProductoResponse"/>
+        <variable name="AltaProductoIn" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" messageType="tns:altaProducto"/>
+        <variable name="AltaClienteOut" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" messageType="tns:altaClienteResponse"/>
+        <variable name="AltaClienteIn" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" messageType="tns:altaCliente"/>
         <variable name="VentaLibrosWSDLOperationOut5" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperationResponse"/>
         <variable name="VentaLibrosWSDLOperationOut4" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperationResponse"/>
         <variable name="VentaLibrosWSDLOperationOut3" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperationResponse"/>
         <variable name="VentaLibrosWSDLOperationOut2" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperationResponse"/>
         <variable name="VentaLibrosWSDLOperationOut1" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperationResponse"/>
+        <variable name="VentaLibrosWSDLOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperationResponse"/>
         <variable name="EnviarProductoOut" xmlns:tns="http://mensajeria.webservice.adictosaltrabajo.com/" messageType="tns:enviarProductoResponse"/>
         <variable name="EnviarProductoIn" xmlns:tns="http://mensajeria.webservice.adictosaltrabajo.com/" messageType="tns:enviarProducto"/>
         <variable name="FacturarOut" xmlns:tns="http://pasarelapago.webservice.adictosaltrabajo.com/" messageType="tns:facturarResponse"/>
@@ -43,178 +60,344 @@
         <variable name="ComprobarStockIn" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" messageType="tns:comprobarStock"/>
         <variable name="ComprobarISBNOut" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" messageType="tns:comprobarISBNResponse"/>
         <variable name="ComprobarISBNIn" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" messageType="tns:comprobarISBN"/>
-        <variable name="VentaLibrosWSDLOperationOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperationResponse"/>
+        <variable name="ModifyProductIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperation1Request3"/>
+        <variable name="ModifyClientIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperation1Request2"/>
+        <variable name="NewProductIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperation1Request1"/>
+        <variable name="NewClientIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperation1Request"/>
         <variable name="VentaLibrosWSDLOperationIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" messageType="tns:VentaLibrosWSDLOperationRequest"/>
     </variables>
-    <sequence>
-        <receive name="Recepcion" createInstance="yes" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationIn"/>
-        <assign name="Assign1">
-            <copy>
-                <from variable="VentaLibrosWSDLOperationIn" part="ISBN"/>
-                <to>$ComprobarISBNIn.parameters/ISBN</to>
-            </copy>
-        </assign>
-        <invoke name="ComprobarISBN" partnerLink="ServicioAlmacen" operation="comprobarISBN" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" portType="tns:Almacen" inputVariable="ComprobarISBNIn" outputVariable="ComprobarISBNOut"/>
-        <if name="If1">
-            <condition>true() and $ComprobarISBNOut.parameters/return</condition>
+    <pick name="Pick1" createInstance="yes">
+        <onMessage partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationIn">
             <sequence name="Sequence1">
-                <assign name="Assign2">
+                <assign name="Assign1">
                     <copy>
                         <from variable="VentaLibrosWSDLOperationIn" part="ISBN"/>
-                        <to>$ComprobarStockIn.parameters/ISBN</to>
-                    </copy>
-                    <copy>
-                        <from variable="VentaLibrosWSDLOperationIn" part="unidades"/>
-                        <to>$ComprobarStockIn.parameters/unidades</to>
+                        <to>$ComprobarISBNIn.parameters/ISBN</to>
                     </copy>
                 </assign>
-                <invoke name="ComprobarStock" partnerLink="ServicioAlmacen" operation="comprobarStock" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" portType="tns:Almacen" inputVariable="ComprobarStockIn" outputVariable="ComprobarStockOut"/>
-                <if name="If2">
-                    <condition>true() and $ComprobarStockOut.parameters/return</condition>
-                    <sequence name="Sequence3">
-                        <assign name="Assign4">
+                <invoke name="ComprobarISBN" partnerLink="ServicioAlmacen" operation="comprobarISBN" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" portType="tns:Almacen" inputVariable="ComprobarISBNIn" outputVariable="ComprobarISBNOut"/>
+                <if name="If1">
+                    <condition>$ComprobarISBNOut.parameters/return and true()</condition>
+                    <sequence name="Sequence2">
+                        <assign name="Assign2">
                             <copy>
-                                <from variable="VentaLibrosWSDLOperationIn" part="idCliente"/>
-                                <to>$ComprobarIdClienteIn.parameters/idCliente</to>
+                                <from variable="VentaLibrosWSDLOperationIn" part="ISBN"/>
+                                <to>$ComprobarStockIn.parameters/ISBN</to>
+                            </copy>
+                            <copy>
+                                <from variable="VentaLibrosWSDLOperationIn" part="unidades"/>
+                                <to>$ComprobarStockIn.parameters/unidades</to>
                             </copy>
                         </assign>
-                        <invoke name="ComprobarIdCliente" partnerLink="ServicioAlmacen" operation="comprobarIdCliente" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" portType="tns:Almacen" inputVariable="ComprobarIdClienteIn" outputVariable="ComprobarIdClienteOut"/>
-                        <if name="If3">
-                            <condition>true() and $ComprobarIdClienteOut.parameters/return</condition>
-                            <sequence name="Sequence5">
-                                <assign name="Assign6">
-                                    <copy>
-                                        <from variable="VentaLibrosWSDLOperationIn" part="unidades"/>
-                                        <to>$ComprobarSaldoIn.parameters/unidades</to>
-                                    </copy>
-                                    <copy>
-                                        <from variable="VentaLibrosWSDLOperationIn" part="precioUnidad"/>
-                                        <to>$ComprobarSaldoIn.parameters/precioUnidad</to>
-                                    </copy>
+                        <invoke name="ComprobarStock" partnerLink="ServicioAlmacen" operation="comprobarStock" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" portType="tns:Almacen" inputVariable="ComprobarStockIn" outputVariable="ComprobarStockOut"/>
+                        <if name="If2">
+                            <condition>$ComprobarStockOut.parameters/return and true()</condition>
+                            <sequence name="Sequence4">
+                                <assign name="Assign4">
                                     <copy>
                                         <from variable="VentaLibrosWSDLOperationIn" part="idCliente"/>
-                                        <to>$ComprobarSaldoIn.parameters/idCliente</to>
+                                        <to>$ComprobarIdClienteIn.parameters/idCliente</to>
                                     </copy>
                                 </assign>
-                                <invoke name="ComprobarSaldo" partnerLink="ServicioAlmacen" operation="comprobarSaldo" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" portType="tns:Almacen" inputVariable="ComprobarSaldoIn" outputVariable="ComprobarSaldoOut"/>
-                                <if name="If4">
-                                    <condition>true() and $ComprobarSaldoOut.parameters/return</condition>
-                                    <sequence name="Sequence7">
-                                        <assign name="Assign8">
+                                <invoke name="ComprobarIdCliente" partnerLink="ServicioAlmacen" operation="comprobarIdCliente" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" portType="tns:Almacen" inputVariable="ComprobarIdClienteIn" outputVariable="ComprobarIdClienteOut"/>
+                                <if name="If3">
+                                    <condition>true() and $ComprobarIdClienteOut.parameters/return</condition>
+                                    <sequence name="Sequence6">
+                                        <assign name="Assign6">
                                             <copy>
-                                                <from variable="VentaLibrosWSDLOperationIn" part="ISBN"/>
-                                                <to>$ActualizarInventarioIn.parameters/ISBN</to>
+                                                <from variable="VentaLibrosWSDLOperationIn" part="unidades"/>
+                                                <to>$ComprobarSaldoIn.parameters/unidades</to>
+                                            </copy>
+                                            <copy>
+                                                <from variable="VentaLibrosWSDLOperationIn" part="precioUnidad"/>
+                                                <to>$ComprobarSaldoIn.parameters/precioUnidad</to>
                                             </copy>
                                             <copy>
                                                 <from variable="VentaLibrosWSDLOperationIn" part="idCliente"/>
-                                                <to>$ActualizarInventarioIn.parameters/idCliente</to>
-                                            </copy>
-                                            <copy>
-                                                <from variable="VentaLibrosWSDLOperationIn" part="unidades"/>
-                                                <to>$ActualizarInventarioIn.parameters/unidades</to>
-                                            </copy>
-                                            <copy>
-                                                <from>$VentaLibrosWSDLOperationIn.unidades * $VentaLibrosWSDLOperationIn.precioUnidad</from>
-                                                <to>$ActualizarInventarioIn.parameters/cuantia</to>
+                                                <to>$ComprobarSaldoIn.parameters/idCliente</to>
                                             </copy>
                                         </assign>
-                                        <invoke name="ActualizarInventarios" partnerLink="ServicioPago" operation="actualizarInventario" xmlns:tns="http://pasarelapago.webservice.adictosaltrabajo.com/" portType="tns:PasarelaPago" inputVariable="ActualizarInventarioIn" outputVariable="ActualizarInventarioOut"/>
-                                        <if name="If5">
-                                            <condition>true() and $ActualizarInventarioOut.parameters/return</condition>
-                                            <sequence name="Sequence9">
-                                                <assign name="Assign10">
+                                        <invoke name="ComprobarSaldo" partnerLink="ServicioAlmacen" operation="comprobarSaldo" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" portType="tns:Almacen" inputVariable="ComprobarSaldoIn" outputVariable="ComprobarSaldoOut"/>
+                                        <if name="If4">
+                                            <condition>true() and $ComprobarSaldoOut.parameters/return</condition>
+                                            <sequence name="Sequence8">
+                                                <assign name="Assign8">
+                                                    <copy>
+                                                        <from variable="VentaLibrosWSDLOperationIn" part="ISBN"/>
+                                                        <to>$ActualizarInventarioIn.parameters/ISBN</to>
+                                                    </copy>
+                                                    <copy>
+                                                        <from variable="VentaLibrosWSDLOperationIn" part="unidades"/>
+                                                        <to>$ActualizarInventarioIn.parameters/unidades</to>
+                                                    </copy>
                                                     <copy>
                                                         <from variable="VentaLibrosWSDLOperationIn" part="idCliente"/>
-                                                        <to>$FacturarIn.parameters/idCliente</to>
+                                                        <to>$ActualizarInventarioIn.parameters/idCliente</to>
                                                     </copy>
                                                     <copy>
                                                         <from>$VentaLibrosWSDLOperationIn.unidades * $VentaLibrosWSDLOperationIn.precioUnidad</from>
-                                                        <to>$FacturarIn.parameters/cuantia</to>
+                                                        <to>$ActualizarInventarioIn.parameters/cuantia</to>
                                                     </copy>
                                                 </assign>
-                                                <invoke name="Facturar" partnerLink="ServicioPago" operation="facturar" xmlns:tns="http://pasarelapago.webservice.adictosaltrabajo.com/" portType="tns:PasarelaPago" inputVariable="FacturarIn" outputVariable="FacturarOut"/>
+                                                <invoke name="ActualizarInventarios" partnerLink="ServicioPago" operation="actualizarInventario" xmlns:tns="http://pasarelapago.webservice.adictosaltrabajo.com/" portType="tns:PasarelaPago" inputVariable="ActualizarInventarioIn" outputVariable="ActualizarInventarioOut"/>
+                                                <if name="If5">
+                                                    <condition>true() and $ActualizarInventarioOut.parameters/return</condition>
+                                                    <sequence name="Sequence10">
+                                                        <assign name="Assign10">
+                                                            <copy>
+                                                                <from variable="VentaLibrosWSDLOperationIn" part="idCliente"/>
+                                                                <to>$FacturarIn.parameters/idCliente</to>
+                                                            </copy>
+                                                            <copy>
+                                                                <from>$VentaLibrosWSDLOperationIn.unidades * $VentaLibrosWSDLOperationIn.precioUnidad</from>
+                                                                <to>$FacturarIn.parameters/cuantia</to>
+                                                            </copy>
+                                                        </assign>
+                                                        <invoke name="Facturar" partnerLink="ServicioPago" operation="facturar" xmlns:tns="http://pasarelapago.webservice.adictosaltrabajo.com/" portType="tns:PasarelaPago" inputVariable="FacturarIn" outputVariable="FacturarOut"/>
+                                                        <assign name="Assign12">
+                                                            <copy>
+                                                                <from>$FacturarOut.parameters/return</from>
+                                                                <to>$EnviarProductoIn.parameters/idPedido</to>
+                                                            </copy>
+                                                            <copy>
+                                                                <from>'Empresa BPEL'</from>
+                                                                <to>$EnviarProductoIn.parameters/empresa</to>
+                                                            </copy>
+                                                        </assign>
+                                                        <invoke name="EnviarProducto" partnerLink="ServicioMensajeria" operation="enviarProducto" xmlns:tns="http://mensajeria.webservice.adictosaltrabajo.com/" portType="tns:EnvioPaquetes" inputVariable="EnviarProductoIn" outputVariable="EnviarProductoOut"/>
+                                                        <assign name="Assign13">
+                                                            <copy>
+                                                                <from>concat('El pedido con el ID: ', $FacturarOut.parameters/return, ' llegara en ', $EnviarProductoOut.parameters/return, ' dias')</from>
+                                                                <to variable="VentaLibrosWSDLOperationOut5" part="resultado"/>
+                                                            </copy>
+                                                        </assign>
+                                                        <reply name="RespuestaTransaccion" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationOut5"/>
+                                                    </sequence>
+                                                    <else>
+                                                        <sequence name="Sequence11">
+                                                            <assign name="Assign11">
+                                                                <copy>
+                                                                    <from>'Hubo un problema al terminar la transaccion'</from>
+                                                                    <to variable="VentaLibrosWSDLOperationOut4" part="resultado"/>
+                                                                </copy>
+                                                            </assign>
+                                                            <reply name="RespuestaInventarios" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationOut4"/>
+                                                        </sequence>
+                                                    </else>
+                                                </if>
                                             </sequence>
                                             <else>
-                                                <sequence name="Sequence10">
-                                                    <assign name="Assign11">
+                                                <sequence name="Sequence9">
+                                                    <assign name="Assign9">
                                                         <copy>
-                                                            <from>'No se puedo realizar la transaccion'</from>
-                                                            <to variable="VentaLibrosWSDLOperationOut5" part="resultado"/>
+                                                            <from>'Este cliente no tiene suficiente saldo'</from>
+                                                            <to variable="VentaLibrosWSDLOperationOut3" part="resultado"/>
                                                         </copy>
                                                     </assign>
-                                                    <reply name="RespuestaActualizar" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationOut5"/>
+                                                    <reply name="RespuestaSaldo" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationOut3"/>
                                                 </sequence>
                                             </else>
                                         </if>
                                     </sequence>
                                     <else>
-                                        <sequence name="Sequence8">
-                                            <assign name="Assign9">
+                                        <sequence name="Sequence7">
+                                            <assign name="Assign7">
                                                 <copy>
-                                                    <from>'Este cliente no tiene suficiente saldo'</from>
-                                                    <to variable="VentaLibrosWSDLOperationOut4" part="resultado"/>
+                                                    <from>'Este IDCliente no esta registrado'</from>
+                                                    <to variable="VentaLibrosWSDLOperationOut2" part="resultado"/>
                                                 </copy>
                                             </assign>
-                                            <reply name="RespuestaSaldo" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationOut4"/>
+                                            <reply name="RespuestaIdCliente" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationOut2"/>
                                         </sequence>
                                     </else>
                                 </if>
                             </sequence>
                             <else>
-                                <sequence name="Sequence6">
-                                    <assign name="Assign7">
+                                <sequence name="Sequence5">
+                                    <assign name="Assign5">
                                         <copy>
-                                            <from>'No hay ningun cliente con este ID'</from>
-                                            <to variable="VentaLibrosWSDLOperationOut3" part="resultado"/>
+                                            <from>'No hay unidades suficientes de este articulo'</from>
+                                            <to variable="VentaLibrosWSDLOperationOut1" part="resultado"/>
                                         </copy>
                                     </assign>
-                                    <reply name="RespuestaIdCliente" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationOut3"/>
+                                    <reply name="RespuestaStock" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationOut1"/>
                                 </sequence>
                             </else>
                         </if>
                     </sequence>
                     <else>
-                        <sequence name="Sequence4">
-                            <assign name="Assign5">
+                        <sequence name="Sequence3">
+                            <assign name="Assign3">
                                 <copy>
-                                    <from>'No hay unidades suficientes de este producto'</from>
-                                    <to variable="VentaLibrosWSDLOperationOut2" part="resultado"/>
+                                    <from>'Este ISBN no existe'</from>
+                                    <to variable="VentaLibrosWSDLOperationOut" part="resultado"/>
                                 </copy>
                             </assign>
-                            <reply name="RespuestaStock" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationOut2"/>
+                            <reply name="RespuestaISBN" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationOut"/>
                         </sequence>
                     </else>
                 </if>
             </sequence>
-            <else>
-                <sequence name="Sequence2">
-                    <assign name="Assign3">
-                        <copy>
-                            <from>'No hay ningun producto con este ISBN'</from>
-                            <to variable="VentaLibrosWSDLOperationOut1" part="resultado"/>
-                        </copy>
-                    </assign>
-                    <reply name="RespuestaISBN" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationOut1"/>
-                </sequence>
-            </else>
-        </if>
-        <assign name="Assign12">
-            <copy>
-                <from>$FacturarOut.parameters/return</from>
-                <to>$EnviarProductoIn.parameters/idPedido</to>
-            </copy>
-            <copy>
-                <from>'Empresa BPEL'</from>
-                <to>$EnviarProductoIn.parameters/empresa</to>
-            </copy>
-        </assign>
-        <invoke name="EnviarProducto" partnerLink="ServicioMensajeria" operation="enviarProducto" xmlns:tns="http://mensajeria.webservice.adictosaltrabajo.com/" portType="tns:EnvioPaquetes" inputVariable="EnviarProductoIn" outputVariable="EnviarProductoOut"/>
-        <assign name="Assign13">
-            <copy>
-                <from>concat('El producto con el ID: ', $FacturarOut.parameters/return, ' se entregara en ', $EnviarProductoOut.parameters/return, ' dias')</from>
-                <to variable="VentaLibrosWSDLOperationOut" part="resultado"/>
-            </copy>
-        </assign>
-        <reply name="RespuestaOk" partnerLink="VentaLibros" operation="VentaLibrosWSDLOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="VentaLibrosWSDLOperationOut"/>
-    </sequence>
+        </onMessage>
+        <onMessage partnerLink="VentaLibros" operation="NewClient" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="NewClientIn">
+            <sequence name="Sequence12">
+                <assign name="Assign14">
+                    <copy>
+                        <from variable="NewClientIn" part="idCliente"/>
+                        <to>$AltaClienteIn.parameters/idCliente</to>
+                    </copy>
+                    <copy>
+                        <from variable="NewClientIn" part="nombreCliente"/>
+                        <to>$AltaClienteIn.parameters/nombreCliente</to>
+                    </copy>
+                    <copy>
+                        <from variable="NewClientIn" part="saldo"/>
+                        <to>$AltaClienteIn.parameters/saldo</to>
+                    </copy>
+                </assign>
+                <invoke name="AltaCliente" partnerLink="ServicioAlmacen" operation="altaCliente" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" portType="tns:Almacen" inputVariable="AltaClienteIn" outputVariable="AltaClienteOut"/>
+                <if name="If6">
+                    <condition>true() and $AltaClienteOut.parameters/return</condition>
+                    <sequence name="Sequence13">
+                        <assign name="Assign15">
+                            <copy>
+                                <from>'Alta exitosa de cliente'</from>
+                                <to variable="NewClientOut" part="resultado"/>
+                            </copy>
+                        </assign>
+                        <reply name="RespuestaExitoAltaCliente" partnerLink="VentaLibros" operation="NewClient" portType="tns:VentaLibrosWSDLPortType" variable="NewClientOut"/>
+                    </sequence>
+                    <else>
+                        <sequence name="Sequence14">
+                            <assign name="Assign16">
+                                <copy>
+                                    <from>'Alta fallida de cliente'</from>
+                                    <to variable="NewClientOut1" part="resultado"/>
+                                </copy>
+                            </assign>
+                            <reply name="RespuestaFalloAltaCliente" partnerLink="VentaLibros" operation="NewClient" portType="tns:VentaLibrosWSDLPortType" variable="NewClientOut1"/>
+                        </sequence>
+                    </else>
+                </if>
+            </sequence>
+        </onMessage>
+        <onMessage partnerLink="VentaLibros" operation="NewProduct" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="NewProductIn">
+            <sequence name="Sequence15">
+                <assign name="Assign17">
+                    <copy>
+                        <from variable="NewProductIn" part="ISBN"/>
+                        <to>$AltaProductoIn.parameters/ISBN</to>
+                    </copy>
+                    <copy>
+                        <from variable="NewProductIn" part="nombreLibro"/>
+                        <to>$AltaProductoIn.parameters/nombrelibro</to>
+                    </copy>
+                    <copy>
+                        <from variable="NewProductIn" part="unidades"/>
+                        <to>$AltaProductoIn.parameters/saldo</to>
+                    </copy>
+                </assign>
+                <invoke name="AltaProducto" partnerLink="ServicioAlmacen" operation="altaProducto" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" portType="tns:Almacen" inputVariable="AltaProductoIn" outputVariable="AltaProductoOut"/>
+                <if name="If7">
+                    <condition>true() and $AltaProductoOut.parameters/return</condition>
+                    <sequence name="Sequence16">
+                        <assign name="Assign18">
+                            <copy>
+                                <from>'Alta exitosa de producto'</from>
+                                <to variable="NewProductOut" part="resultado"/>
+                            </copy>
+                        </assign>
+                        <reply name="RespuestaExitoAltaProducto" partnerLink="VentaLibros" operation="NewProduct" portType="tns:VentaLibrosWSDLPortType" variable="NewProductOut"/>
+                    </sequence>
+                    <else>
+                        <sequence name="Sequence17">
+                            <assign name="Assign19">
+                                <copy>
+                                    <from>'Alta fallida de producto'</from>
+                                    <to variable="NewProductOut1" part="resultado"/>
+                                </copy>
+                            </assign>
+                            <reply name="RespuestaFalloAltaProducto" partnerLink="VentaLibros" operation="NewProduct" portType="tns:VentaLibrosWSDLPortType" variable="NewProductOut1"/>
+                        </sequence>
+                    </else>
+                </if>
+            </sequence>
+        </onMessage>
+        <onMessage partnerLink="VentaLibros" operation="ModifyClient" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="ModifyClientIn">
+            <sequence name="Sequence18">
+                <assign name="Assign20">
+                    <copy>
+                        <from variable="ModifyClientIn" part="idCliente"/>
+                        <to>$ModificarClienteIn.parameters/idCliente</to>
+                    </copy>
+                    <copy>
+                        <from variable="ModifyClientIn" part="saldo"/>
+                        <to>$ModificarClienteIn.parameters/saldo</to>
+                    </copy>
+                </assign>
+                <invoke name="ModificarCliente" partnerLink="ServicioAlmacen" operation="modificarCliente" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" portType="tns:Almacen" inputVariable="ModificarClienteIn" outputVariable="ModificarClienteOut"/>
+                <if name="If8">
+                    <condition>true() and $ModificarClienteOut.parameters/return</condition>
+                    <sequence name="Sequence19">
+                        <assign name="Assign21">
+                            <copy>
+                                <from>'Modificacion exitosa de cliente'</from>
+                                <to variable="ModifyClientOut" part="resultado"/>
+                            </copy>
+                        </assign>
+                        <reply name="RespuestaExitoModificacionCliente" partnerLink="VentaLibros" operation="ModifyClient" portType="tns:VentaLibrosWSDLPortType" variable="ModifyClientOut"/>
+                    </sequence>
+                    <else>
+                        <sequence name="Sequence20">
+                            <assign name="Assign22">
+                                <copy>
+                                    <from>'Modificacion fallida de cliente'</from>
+                                    <to variable="ModifyClientOut1" part="resultado"/>
+                                </copy>
+                            </assign>
+                            <reply name="RespuestaFalloModificacionCliente" partnerLink="VentaLibros" operation="ModifyClient" portType="tns:VentaLibrosWSDLPortType" variable="ModifyClientOut1"/>
+                        </sequence>
+                    </else>
+                </if>
+            </sequence>
+        </onMessage>
+        <onMessage partnerLink="VentaLibros" operation="ModifyProduct" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" portType="tns:VentaLibrosWSDLPortType" variable="ModifyProductIn">
+            <sequence name="Sequence21">
+                <assign name="Assign23">
+                    <copy>
+                        <from variable="ModifyProductIn" part="ISBN"/>
+                        <to>$ModificarProductoIn.parameters/ISBN</to>
+                    </copy>
+                    <copy>
+                        <from variable="ModifyProductIn" part="unidades"/>
+                        <to>$ModificarProductoIn.parameters/saldo</to>
+                    </copy>
+                </assign>
+                <invoke name="ModificarProducto" partnerLink="ServicioAlmacen" operation="modificarProducto" xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" portType="tns:Almacen" inputVariable="ModificarProductoIn" outputVariable="ModificarProductoOut"/>
+                <if name="If9">
+                    <condition>true() and $ModificarProductoOut.parameters/return</condition>
+                    <sequence name="Sequence22">
+                        <assign name="Assign24">
+                            <copy>
+                                <from>'Modificacion exitosa de producto'</from>
+                                <to variable="ModifyProductOut" part="resultado"/>
+                            </copy>
+                        </assign>
+                        <reply name="RespuestaExitoModificacionProducto" partnerLink="VentaLibros" operation="ModifyProduct" portType="tns:VentaLibrosWSDLPortType" variable="ModifyProductOut"/>
+                    </sequence>
+                    <else>
+                        <sequence name="Sequence23">
+                            <assign name="Assign25">
+                                <copy>
+                                    <from>'Modificacion fallida de producto'</from>
+                                    <to variable="ModifyProductOut1" part="resultado"/>
+                                </copy>
+                            </assign>
+                            <reply name="RespuestaFalloModificacionProducto" partnerLink="VentaLibros" operation="ModifyProduct" portType="tns:VentaLibrosWSDLPortType" variable="ModifyProductOut1"/>
+                        </sequence>
+                    </else>
+                </if>
+            </sequence>
+        </onMessage>
+    </pick>
 </process>

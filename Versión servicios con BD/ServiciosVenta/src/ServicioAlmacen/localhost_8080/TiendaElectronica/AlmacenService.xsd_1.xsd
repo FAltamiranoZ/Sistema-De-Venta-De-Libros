@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://almacen.webservice.adictosaltrabajo.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://almacen.webservice.adictosaltrabajo.com/">
 
+<xs:element name="altaCliente" type="tns:altaCliente"/>
+
+<xs:element name="altaClienteResponse" type="tns:altaClienteResponse"/>
+
+<xs:element name="altaProducto" type="tns:altaProducto"/>
+
+<xs:element name="altaProductoResponse" type="tns:altaProductoResponse"/>
+
 <xs:element name="comprobarISBN" type="tns:comprobarISBN"/>
 
 <xs:element name="comprobarISBNResponse" type="tns:comprobarISBNResponse"/>
@@ -16,6 +24,14 @@
 
 <xs:element name="comprobarStockResponse" type="tns:comprobarStockResponse"/>
 
+<xs:element name="modificarCliente" type="tns:modificarCliente"/>
+
+<xs:element name="modificarClienteResponse" type="tns:modificarClienteResponse"/>
+
+<xs:element name="modificarProducto" type="tns:modificarProducto"/>
+
+<xs:element name="modificarProductoResponse" type="tns:modificarProductoResponse"/>
+
 <xs:complexType name="comprobarIdCliente">
 <xs:sequence>
 <xs:element name="idCliente" type="xs:string" minOccurs="0"/>
@@ -23,6 +39,33 @@
 </xs:complexType>
 
 <xs:complexType name="comprobarIdClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarCliente">
+<xs:sequence>
+<xs:element name="idCliente" type="xs:string" minOccurs="0"/>
+<xs:element name="saldo" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="altaCliente">
+<xs:sequence>
+<xs:element name="idCliente" type="xs:string" minOccurs="0"/>
+<xs:element name="nombreCliente" type="xs:string" minOccurs="0"/>
+<xs:element name="saldo" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="altaClienteResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>
@@ -62,6 +105,33 @@
 </xs:complexType>
 
 <xs:complexType name="comprobarSaldoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarProducto">
+<xs:sequence>
+<xs:element name="ISBN" type="xs:string" minOccurs="0"/>
+<xs:element name="saldo" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="altaProducto">
+<xs:sequence>
+<xs:element name="ISBN" type="xs:string" minOccurs="0"/>
+<xs:element name="nombrelibro" type="xs:string" minOccurs="0"/>
+<xs:element name="saldo" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="altaProductoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>

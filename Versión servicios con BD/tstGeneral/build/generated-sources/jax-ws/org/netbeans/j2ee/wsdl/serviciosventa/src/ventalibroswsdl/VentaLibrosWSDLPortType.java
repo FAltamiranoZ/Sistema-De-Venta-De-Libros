@@ -40,4 +40,70 @@ public interface VentaLibrosWSDLPortType {
         @WebParam(name = "precioUnidad", partName = "precioUnidad")
         int precioUnidad);
 
+    /**
+     * 
+     * @param idCliente
+     * @param nombreCliente
+     * @param saldo
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "NewClient")
+    @WebResult(name = "resultado", partName = "resultado")
+    public String newClient(
+        @WebParam(name = "idCliente", partName = "idCliente")
+        String idCliente,
+        @WebParam(name = "nombreCliente", partName = "nombreCliente")
+        String nombreCliente,
+        @WebParam(name = "saldo", partName = "saldo")
+        float saldo);
+
+    /**
+     * 
+     * @param isbn
+     * @param unidades
+     * @param nombreLibro
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "NewProduct")
+    @WebResult(name = "resultado", partName = "resultado")
+    public String newProduct(
+        @WebParam(name = "ISBN", partName = "ISBN")
+        String isbn,
+        @WebParam(name = "nombreLibro", partName = "nombreLibro")
+        String nombreLibro,
+        @WebParam(name = "unidades", partName = "unidades")
+        int unidades);
+
+    /**
+     * 
+     * @param idCliente
+     * @param saldo
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "ModifyClient")
+    @WebResult(name = "resultado", partName = "resultado")
+    public String modifyClient(
+        @WebParam(name = "idCliente", partName = "idCliente")
+        String idCliente,
+        @WebParam(name = "saldo", partName = "saldo")
+        float saldo);
+
+    /**
+     * 
+     * @param isbn
+     * @param unidades
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "ModifyProduct")
+    @WebResult(name = "resultado", partName = "resultado")
+    public String modifyProduct(
+        @WebParam(name = "ISBN", partName = "ISBN")
+        String isbn,
+        @WebParam(name = "unidades", partName = "unidades")
+        int unidades);
+
 }

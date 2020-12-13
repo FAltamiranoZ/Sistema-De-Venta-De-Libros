@@ -2,7 +2,31 @@
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="VentaLibrosWSDL" targetNamespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL">
   <types>
   </types>
+  <message name="VentaLibrosWSDLOperation1Response1">
+    <part name="resultado" type="xsd:string">
+    </part>
+  </message>
+  <message name="VentaLibrosWSDLOperation1Response2">
+    <part name="resultado" type="xsd:string">
+    </part>
+  </message>
+  <message name="VentaLibrosWSDLOperation1Response3">
+    <part name="resultado" type="xsd:string">
+    </part>
+  </message>
   <message name="VentaLibrosWSDLOperationResponse">
+    <part name="resultado" type="xsd:string">
+    </part>
+  </message>
+  <message name="VentaLibrosWSDLOperation1Request">
+    <part name="idCliente" type="xsd:string">
+    </part>
+    <part name="nombreCliente" type="xsd:string">
+    </part>
+    <part name="saldo" type="xsd:float">
+    </part>
+  </message>
+  <message name="VentaLibrosWSDLOperation1Response">
     <part name="resultado" type="xsd:string">
     </part>
   </message>
@@ -16,11 +40,55 @@
     <part name="precioUnidad" type="xsd:int">
     </part>
   </message>
+  <message name="VentaLibrosWSDLOperation1Request2">
+    <part name="idCliente" type="xsd:string">
+    </part>
+    <part name="saldo" type="xsd:float">
+    </part>
+  </message>
+  <message name="VentaLibrosWSDLOperation1Request3">
+    <part name="ISBN" type="xsd:string">
+    </part>
+    <part name="unidades" type="xsd:int">
+    </part>
+  </message>
+  <message name="VentaLibrosWSDLOperation1Request1">
+    <part name="ISBN" type="xsd:string">
+    </part>
+    <part name="nombreLibro" type="xsd:string">
+    </part>
+    <part name="unidades" type="xsd:int">
+    </part>
+  </message>
   <portType name="VentaLibrosWSDLPortType">
     <operation name="VentaLibrosWSDLOperation">
       <input message="tns:VentaLibrosWSDLOperationRequest" name="input1">
     </input>
       <output message="tns:VentaLibrosWSDLOperationResponse" name="output1">
+    </output>
+    </operation>
+    <operation name="NewClient">
+      <input message="tns:VentaLibrosWSDLOperation1Request" name="input2">
+    </input>
+      <output message="tns:VentaLibrosWSDLOperation1Response" name="output2">
+    </output>
+    </operation>
+    <operation name="NewProduct">
+      <input message="tns:VentaLibrosWSDLOperation1Request1" name="input3">
+    </input>
+      <output message="tns:VentaLibrosWSDLOperation1Response1" name="output3">
+    </output>
+    </operation>
+    <operation name="ModifyClient">
+      <input message="tns:VentaLibrosWSDLOperation1Request2" name="input4">
+    </input>
+      <output message="tns:VentaLibrosWSDLOperation1Response2" name="output4">
+    </output>
+    </operation>
+    <operation name="ModifyProduct">
+      <input message="tns:VentaLibrosWSDLOperation1Request3" name="input5">
+    </input>
+      <output message="tns:VentaLibrosWSDLOperation1Response3" name="output5">
     </output>
     </operation>
   </portType>
@@ -32,6 +100,42 @@
         <soap:body namespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" use="literal"/>
       </input>
       <output name="output1">
+        <soap:body namespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" use="literal"/>
+      </output>
+    </operation>
+    <operation name="NewClient">
+      <soap:operation/>
+      <input name="input2">
+        <soap:body namespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" use="literal"/>
+      </input>
+      <output name="output2">
+        <soap:body namespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" use="literal"/>
+      </output>
+    </operation>
+    <operation name="NewProduct">
+      <soap:operation/>
+      <input name="input3">
+        <soap:body namespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" use="literal"/>
+      </input>
+      <output name="output3">
+        <soap:body namespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" use="literal"/>
+      </output>
+    </operation>
+    <operation name="ModifyClient">
+      <soap:operation/>
+      <input name="input4">
+        <soap:body namespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" use="literal"/>
+      </input>
+      <output name="output4">
+        <soap:body namespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" use="literal"/>
+      </output>
+    </operation>
+    <operation name="ModifyProduct">
+      <soap:operation/>
+      <input name="input5">
+        <soap:body namespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" use="literal"/>
+      </input>
+      <output name="output5">
         <soap:body namespace="http://j2ee.netbeans.org/wsdl/ServiciosVenta/src/VentaLibrosWSDL" use="literal"/>
       </output>
     </operation>

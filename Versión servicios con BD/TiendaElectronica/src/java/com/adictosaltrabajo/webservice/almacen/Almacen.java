@@ -97,4 +97,76 @@ public class Almacen {
         return flag;
     }
 
+    @WebMethod(operationName = "altaCliente")
+    public Boolean altaCliente(@WebParam(name = "idCliente") String idCliente, @WebParam(name = "nombreCliente") String nombreCliente, @WebParam(name = "saldo") float saldo) {
+        boolean flag = false;
+        try {
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/serviciosVenta", "app", "app");
+            Statement s = con.createStatement();
+            s.executeUpdate("INSERT INTO clientes (idCliente, nombreCliente, saldo) VALUES ('" + idCliente + "', '" + nombreCliente + "', " + saldo + ")");
+            s.close();
+            con.close();
+            flag = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    @WebMethod(operationName = "altaProducto")
+    public Boolean altaProducto(@WebParam(name = "ISBN") String ISBN, @WebParam(name = "nombrelibro") String nombreLibro, @WebParam(name = "saldo") int unidades) {
+        boolean flag = false;
+        try {
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/serviciosVenta", "app", "app");
+            Statement s = con.createStatement();
+            s.executeUpdate("INSERT INTO productos (ISBN, nombreLibro, unidades) VALUES ('" + ISBN + "', '" + nombreLibro + "', " + unidades + ")");
+            s.close();
+            con.close();
+            flag = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    @WebMethod(operationName = "modificarCliente")
+    public Boolean modificarCliente(@WebParam(name = "idCliente") String idCliente, @WebParam(name = "saldo") float saldo) {
+        boolean flag = false;
+        try {
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/serviciosVenta", "app", "app");
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery("select saldo from clientes where idCliente = '" + idCliente + "'");
+            if (rs.next()) {
+                s.executeUpdate("update clientes set saldo = " + saldo + " where idcliente = '" + idCliente + "'");
+                flag = true;
+            }
+            rs.close();
+            s.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    @WebMethod(operationName = "modificarProducto")
+    public Boolean modificarProducto(@WebParam(name = "ISBN") String ISBN, @WebParam(name = "saldo") int unidades) {
+        boolean flag = false;
+        try {
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/serviciosVenta", "app", "app");
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery("select ISBN from productos where ISBN = '" + ISBN + "'");
+            if (rs.next()) {
+                s.executeUpdate("update productos set unidades = " + unidades + " where ISBN = '" + ISBN + "'");
+                flag = true;
+            }
+            rs.close();       
+            s.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
 }

@@ -23,6 +23,42 @@
                 <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
             </output>
         </operation>
+        <operation name="NewClient">
+            <soap:operation/>
+            <input name="input2">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </input>
+            <output name="output2">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </output>
+        </operation>
+        <operation name="NewProduct">
+            <soap:operation/>
+            <input name="input3">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </input>
+            <output name="output3">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </output>
+        </operation>
+        <operation name="ModifyClient">
+            <soap:operation/>
+            <input name="input4">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </input>
+            <output name="output4">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </output>
+        </operation>
+        <operation name="ModifyProduct">
+            <soap:operation/>
+            <input name="input5">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </input>
+            <output name="output5">
+                <soap:body use="literal" namespace="AplicacionTuLibroOnline"/>
+            </output>
+        </operation>
     </binding>
     <service name="AplicacionTuLibroOnlineService1">
         <port name="casaPort1" binding="tns:casaBinding1">

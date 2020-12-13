@@ -37,19 +37,6 @@
     </endpoint>
     <endpoint>
         <type>consumer</type>
-        <endpoint-name>EnvioPaquetesRole_partnerRole</endpoint-name>
-        <service-name>
-            <namespace>http://enterprise.netbeans.org/bpel/ServiciosVenta/serviciosVenta</namespace>
-            <localname>ServicioMensajeria</localname>
-        </service-name>
-        <interface-name>
-            <namespace>http://mensajeria.webservice.adictosaltrabajo.com/</namespace>
-            <localname>EnvioPaquetes</localname>
-        </interface-name>
-        <description>description of the service provided or consumed through this endPoint</description>
-    </endpoint>
-    <endpoint>
-        <type>consumer</type>
         <endpoint-name>PasarelaPagoRole_partnerRole</endpoint-name>
         <service-name>
             <namespace>http://enterprise.netbeans.org/bpel/ServiciosVenta/serviciosVenta</namespace>
@@ -58,6 +45,19 @@
         <interface-name>
             <namespace>http://pasarelapago.webservice.adictosaltrabajo.com/</namespace>
             <localname>PasarelaPago</localname>
+        </interface-name>
+        <description>description of the service provided or consumed through this endPoint</description>
+    </endpoint>
+    <endpoint>
+        <type>consumer</type>
+        <endpoint-name>EnvioPaquetesRole_partnerRole</endpoint-name>
+        <service-name>
+            <namespace>http://enterprise.netbeans.org/bpel/ServiciosVenta/serviciosVenta</namespace>
+            <localname>ServicioMensajeria</localname>
+        </service-name>
+        <interface-name>
+            <namespace>http://mensajeria.webservice.adictosaltrabajo.com/</namespace>
+            <localname>EnvioPaquetes</localname>
         </interface-name>
         <description>description of the service provided or consumed through this endPoint</description>
     </endpoint>
